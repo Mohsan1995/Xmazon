@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66174A171C6FDCD300B30279 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A151C6FDCD300B30279 /* MainViewController.m */; };
+		66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A161C6FDCD300B30279 /* MainViewController.xib */; };
 		66B1E5B01C4F8709004C6955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5AF1C4F8709004C6955 /* main.m */; };
 		66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B21C4F8709004C6955 /* AppDelegate.m */; };
-		66B1E5B61C4F8709004C6955 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B51C4F8709004C6955 /* ViewController.m */; };
-		66B1E5B91C4F8709004C6955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5B71C4F8709004C6955 /* Main.storyboard */; };
 		66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BA1C4F8709004C6955 /* Assets.xcassets */; };
 		66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BC1C4F8709004C6955 /* LaunchScreen.storyboard */; };
 		66B1E5C91C4F8709004C6955 /* xmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5C81C4F8709004C6955 /* xmazonTests.m */; };
@@ -38,13 +38,13 @@
 /* Begin PBXFileReference section */
 		31B0E27C0E059A5E54CD7923 /* libPods-xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD386C4CEC1F938D3375EB /* Pods-xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-xmazon/Pods-xmazon.release.xcconfig"; sourceTree = "<group>"; };
+		66174A141C6FDCD300B30279 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		66174A151C6FDCD300B30279 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		66174A161C6FDCD300B30279 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66B1E5B21C4F8709004C6955 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66B1E5B41C4F8709004C6955 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		66B1E5B51C4F8709004C6955 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		66B1E5B81C4F8709004C6955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66B1E5BA1C4F8709004C6955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66B1E5BD1C4F8709004C6955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66B1E5BF1C4F8709004C6955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,13 +119,13 @@
 			children = (
 				66B1E5B11C4F8709004C6955 /* AppDelegate.h */,
 				66B1E5B21C4F8709004C6955 /* AppDelegate.m */,
-				66B1E5B41C4F8709004C6955 /* ViewController.h */,
-				66B1E5B51C4F8709004C6955 /* ViewController.m */,
-				66B1E5B71C4F8709004C6955 /* Main.storyboard */,
 				66B1E5BA1C4F8709004C6955 /* Assets.xcassets */,
 				66B1E5BC1C4F8709004C6955 /* LaunchScreen.storyboard */,
 				66B1E5BF1C4F8709004C6955 /* Info.plist */,
 				66B1E5AE1C4F8709004C6955 /* Supporting Files */,
+				66174A141C6FDCD300B30279 /* MainViewController.h */,
+				66174A151C6FDCD300B30279 /* MainViewController.m */,
+				66174A161C6FDCD300B30279 /* MainViewController.xib */,
 			);
 			path = xmazon;
 			sourceTree = "<group>";
@@ -271,8 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
+				66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */,
 				66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */,
-				66B1E5B91C4F8709004C6955 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B1E5B61C4F8709004C6955 /* ViewController.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
+				66174A171C6FDCD300B30279 /* MainViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,14 +383,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		66B1E5B71C4F8709004C6955 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66B1E5B81C4F8709004C6955 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		66B1E5BC1C4F8709004C6955 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "AFOAuth2Manager/AFOauth2Manager.h"
 
@@ -18,6 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    UIWindow* window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [MainViewController new]];
+    [window makeKeyAndVisible];
+    self.window = window;
     // Override point for customization after application launch.
     NSURL *baseURL = [NSURL URLWithString:@"http://xmazon.appspaces.fr"];
     AFOAuth2Manager *OAuth2Manager =
