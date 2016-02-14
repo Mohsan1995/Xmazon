@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "NetworkManager.h"
+#import "SlideNavigationController.h"
 
 @interface MainViewController ()
 
@@ -19,6 +20,7 @@
     [super viewDidLoad];
     stores_ = [[NSMutableArray alloc] init];
     self.title = @"Michel Moncul";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(onTouchMenu)];
     
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
 //    [defaults setObject:nil forKey:@"app_token"];
@@ -36,6 +38,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) onTouchMenu {
+    NSLog(@"onTouchMenu");
+    [[SlideNavigationController sharedInstance] toggleLeftMenu];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

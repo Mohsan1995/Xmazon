@@ -6,7 +6,6 @@
 target 'xmazon' do
 pod 'AFNetworking', '~> 2.0'
 pod 'AFOAuth2Manager', '2.1.0'
-pod 'iOS-Slide-Menu', '1.5'
 
 end
 
