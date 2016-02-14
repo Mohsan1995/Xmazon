@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		66174A171C6FDCD300B30279 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A151C6FDCD300B30279 /* MainViewController.m */; };
 		66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A161C6FDCD300B30279 /* MainViewController.xib */; };
+		66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A1B1C6FDE3000B30279 /* NetworkManager.m */; };
+		66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A211C6FE1B400B30279 /* MenuViewController.m */; };
+		66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A221C6FE1B400B30279 /* MenuViewController.xib */; };
 		66B1E5B01C4F8709004C6955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5AF1C4F8709004C6955 /* main.m */; };
 		66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B21C4F8709004C6955 /* AppDelegate.m */; };
 		66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BA1C4F8709004C6955 /* Assets.xcassets */; };
@@ -41,6 +44,11 @@
 		66174A141C6FDCD300B30279 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		66174A151C6FDCD300B30279 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		66174A161C6FDCD300B30279 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		66174A1A1C6FDE3000B30279 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		66174A1B1C6FDE3000B30279 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		66174A201C6FE1B400B30279 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		66174A211C6FE1B400B30279 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		66174A221C6FE1B400B30279 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +100,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		66174A191C6FDE0800B30279 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				66174A1A1C6FDE3000B30279 /* NetworkManager.h */,
+				66174A1B1C6FDE3000B30279 /* NetworkManager.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		66B1E5A21C4F8709004C6955 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +134,7 @@
 		66B1E5AD1C4F8709004C6955 /* xmazon */ = {
 			isa = PBXGroup;
 			children = (
+				66174A191C6FDE0800B30279 /* Utils */,
 				66B1E5B11C4F8709004C6955 /* AppDelegate.h */,
 				66B1E5B21C4F8709004C6955 /* AppDelegate.m */,
 				66B1E5BA1C4F8709004C6955 /* Assets.xcassets */,
@@ -126,6 +144,9 @@
 				66174A141C6FDCD300B30279 /* MainViewController.h */,
 				66174A151C6FDCD300B30279 /* MainViewController.m */,
 				66174A161C6FDCD300B30279 /* MainViewController.xib */,
+				66174A201C6FE1B400B30279 /* MenuViewController.h */,
+				66174A211C6FE1B400B30279 /* MenuViewController.m */,
+				66174A221C6FE1B400B30279 /* MenuViewController.xib */,
 			);
 			path = xmazon;
 			sourceTree = "<group>";
@@ -273,6 +294,7 @@
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
 				66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */,
 				66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */,
+				66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
 				66174A171C6FDCD300B30279 /* MainViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
+				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

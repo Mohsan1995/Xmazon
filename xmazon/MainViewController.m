@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "NetworkManager.h"
 
 @interface MainViewController ()
 
@@ -16,7 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    stores_ = [[NSMutableArray alloc] init];
+    self.title = @"Michel Moncul";
+    
+    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
+//    [defaults setObject:nil forKey:@"app_token"];
+    [NetworkManager getStoreWithSuccess:^(id responseObject) {
+        for(NSString* key in [responseObject objectForKey:@"result"]) {
+            NSDictionary* data = key;
+            [stores_ addObject:[data objectForKey:@"name"]];
+            [self.storeTableView reloadData];
+        }
+    } failure:^{
+        NSLog(@"NOPPPPP");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +38,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [stores_ count];
 }
-*/
+
+static NSString* const toto = @"mdr";
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: toto];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: toto];
+    }
+    cell.textLabel.text = [stores_ objectAtIndex: indexPath.row];
+    return cell;
+}
 
 @end

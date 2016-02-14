@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    
+    @private
+    NSMutableArray* stores_;
+}
+@property (weak, nonatomic) IBOutlet UITableView *storeTableView;
 
 @end

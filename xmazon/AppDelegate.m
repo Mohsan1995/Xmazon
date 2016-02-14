@@ -10,6 +10,8 @@
 #import "MainViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "AFOAuth2Manager/AFOauth2Manager.h"
+#import "SlideNavigationController.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,27 +21,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    MenuViewController* menu = [[MenuViewController alloc] init];
+    SlideNavigationController* slideNav = [[SlideNavigationController alloc] init];
+    slideNav.leftMenu = menu;
+    
     UIWindow* window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
     window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [MainViewController new]];
     [window makeKeyAndVisible];
     self.window = window;
-    // Override point for customization after application launch.
-    NSURL *baseURL = [NSURL URLWithString:@"http://xmazon.appspaces.fr"];
-    AFOAuth2Manager *OAuth2Manager =
-    [[AFOAuth2Manager alloc] initWithBaseURL:baseURL
-                                    clientID:@"b3e039df-39a9-4b89-8467-499bed101fd9"
-                                      secret:@"27542b4d359fffcbf8a9de29e97788d4d5c609ca"];
-    
-    [OAuth2Manager authenticateUsingOAuthWithURLString:@"oauth/token"
-                                            parameters:@{@"grant_type":@"client_credentials"}
-                                               success:^(AFOAuthCredential *credential) {
-                                                NSLog(@"Token: %@", credential.accessToken);
-                                               }
-                                               failure:^(NSError *error) {
-                                                   NSLog(@"Error: %@", error);
-                                               }];
-    
-    
     return YES;
 }
 
