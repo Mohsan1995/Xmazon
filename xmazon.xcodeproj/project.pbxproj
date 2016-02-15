@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66174A171C6FDCD300B30279 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A151C6FDCD300B30279 /* MainViewController.m */; };
+		66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A161C6FDCD300B30279 /* MainViewController.xib */; };
+		66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A1B1C6FDE3000B30279 /* NetworkManager.m */; };
+		66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A211C6FE1B400B30279 /* MenuViewController.m */; };
+		66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A221C6FE1B400B30279 /* MenuViewController.xib */; };
 		66B1E5B01C4F8709004C6955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5AF1C4F8709004C6955 /* main.m */; };
 		66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B21C4F8709004C6955 /* AppDelegate.m */; };
-		66B1E5B61C4F8709004C6955 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B51C4F8709004C6955 /* ViewController.m */; };
-		66B1E5B91C4F8709004C6955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5B71C4F8709004C6955 /* Main.storyboard */; };
 		66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BA1C4F8709004C6955 /* Assets.xcassets */; };
 		66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BC1C4F8709004C6955 /* LaunchScreen.storyboard */; };
 		66B1E5C91C4F8709004C6955 /* xmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5C81C4F8709004C6955 /* xmazonTests.m */; };
 		66B1E5D41C4F8709004C6955 /* xmazonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5D31C4F8709004C6955 /* xmazonUITests.m */; };
+		66E446EC1C7259740030ED7A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446EB1C7259740030ED7A /* RootViewController.m */; };
+		66E446F11C725CA00030ED7A /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F01C725CA00030ED7A /* MenuItem.m */; };
+		66E446F41C725E520030ED7A /* HomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F31C725E520030ED7A /* HomeMenuItem.m */; };
+		66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F61C725F2F0030ED7A /* StoreMenuItem.m */; };
+		66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F91C725FEC0030ED7A /* StoreViewController.m */; };
+		66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E446FA1C725FEC0030ED7A /* StoreViewController.xib */; };
 		A5F1A1E029C1431084E9EEBA /* libPods-xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B0E27C0E059A5E54CD7923 /* libPods-xmazon.a */; };
 /* End PBXBuildFile section */
 
@@ -38,13 +47,18 @@
 /* Begin PBXFileReference section */
 		31B0E27C0E059A5E54CD7923 /* libPods-xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD386C4CEC1F938D3375EB /* Pods-xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-xmazon/Pods-xmazon.release.xcconfig"; sourceTree = "<group>"; };
+		66174A141C6FDCD300B30279 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		66174A151C6FDCD300B30279 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		66174A161C6FDCD300B30279 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		66174A1A1C6FDE3000B30279 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		66174A1B1C6FDE3000B30279 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		66174A201C6FE1B400B30279 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		66174A211C6FE1B400B30279 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		66174A221C6FE1B400B30279 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66B1E5B21C4F8709004C6955 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66B1E5B41C4F8709004C6955 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		66B1E5B51C4F8709004C6955 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		66B1E5B81C4F8709004C6955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66B1E5BA1C4F8709004C6955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66B1E5BD1C4F8709004C6955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66B1E5BF1C4F8709004C6955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +68,17 @@
 		66B1E5CF1C4F8709004C6955 /* xmazonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xmazonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5D31C4F8709004C6955 /* xmazonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xmazonUITests.m; sourceTree = "<group>"; };
 		66B1E5D51C4F8709004C6955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E446EA1C7259740030ED7A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		66E446EB1C7259740030ED7A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		66E446EF1C725CA00030ED7A /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
+		66E446F01C725CA00030ED7A /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
+		66E446F21C725E520030ED7A /* HomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuItem.h; sourceTree = "<group>"; };
+		66E446F31C725E520030ED7A /* HomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuItem.m; sourceTree = "<group>"; };
+		66E446F51C725F2F0030ED7A /* StoreMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreMenuItem.h; sourceTree = "<group>"; };
+		66E446F61C725F2F0030ED7A /* StoreMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreMenuItem.m; sourceTree = "<group>"; };
+		66E446F81C725FEC0030ED7A /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		66E446F91C725FEC0030ED7A /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		66E446FA1C725FEC0030ED7A /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
 		A0442DDD880BA9EE37FF2829 /* Pods-xmazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xmazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xmazon/Pods-xmazon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +117,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		66174A191C6FDE0800B30279 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				66174A1A1C6FDE3000B30279 /* NetworkManager.h */,
+				66174A1B1C6FDE3000B30279 /* NetworkManager.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		66B1E5A21C4F8709004C6955 = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +151,11 @@
 		66B1E5AD1C4F8709004C6955 /* xmazon */ = {
 			isa = PBXGroup;
 			children = (
+				66E446ED1C725C6A0030ED7A /* View */,
+				66E446EE1C725C860030ED7A /* Object */,
+				66174A191C6FDE0800B30279 /* Utils */,
 				66B1E5B11C4F8709004C6955 /* AppDelegate.h */,
 				66B1E5B21C4F8709004C6955 /* AppDelegate.m */,
-				66B1E5B41C4F8709004C6955 /* ViewController.h */,
-				66B1E5B51C4F8709004C6955 /* ViewController.m */,
-				66B1E5B71C4F8709004C6955 /* Main.storyboard */,
 				66B1E5BA1C4F8709004C6955 /* Assets.xcassets */,
 				66B1E5BC1C4F8709004C6955 /* LaunchScreen.storyboard */,
 				66B1E5BF1C4F8709004C6955 /* Info.plist */,
@@ -154,6 +188,37 @@
 				66B1E5D51C4F8709004C6955 /* Info.plist */,
 			);
 			path = xmazonUITests;
+			sourceTree = "<group>";
+		};
+		66E446ED1C725C6A0030ED7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66E446EA1C7259740030ED7A /* RootViewController.h */,
+				66E446EB1C7259740030ED7A /* RootViewController.m */,
+				66174A201C6FE1B400B30279 /* MenuViewController.h */,
+				66174A211C6FE1B400B30279 /* MenuViewController.m */,
+				66174A221C6FE1B400B30279 /* MenuViewController.xib */,
+				66174A141C6FDCD300B30279 /* MainViewController.h */,
+				66174A151C6FDCD300B30279 /* MainViewController.m */,
+				66174A161C6FDCD300B30279 /* MainViewController.xib */,
+				66E446F81C725FEC0030ED7A /* StoreViewController.h */,
+				66E446F91C725FEC0030ED7A /* StoreViewController.m */,
+				66E446FA1C725FEC0030ED7A /* StoreViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		66E446EE1C725C860030ED7A /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				66E446EF1C725CA00030ED7A /* MenuItem.h */,
+				66E446F01C725CA00030ED7A /* MenuItem.m */,
+				66E446F21C725E520030ED7A /* HomeMenuItem.h */,
+				66E446F31C725E520030ED7A /* HomeMenuItem.m */,
+				66E446F51C725F2F0030ED7A /* StoreMenuItem.h */,
+				66E446F61C725F2F0030ED7A /* StoreMenuItem.m */,
+			);
+			name = Object;
 			sourceTree = "<group>";
 		};
 		FEBD5F4759D4259CE2E82929 /* Frameworks */ = {
@@ -270,9 +335,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */,
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
+				66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */,
 				66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */,
-				66B1E5B91C4F8709004C6955 /* Main.storyboard in Resources */,
+				66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +412,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B1E5B61C4F8709004C6955 /* ViewController.m in Sources */,
+				66E446F11C725CA00030ED7A /* MenuItem.m in Sources */,
+				66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
+				66E446EC1C7259740030ED7A /* RootViewController.m in Sources */,
+				66E446F41C725E520030ED7A /* HomeMenuItem.m in Sources */,
+				66174A171C6FDCD300B30279 /* MainViewController.m in Sources */,
+				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
+				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
+				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,14 +457,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		66B1E5B71C4F8709004C6955 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66B1E5B81C4F8709004C6955 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		66B1E5BC1C4F8709004C6955 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -489,6 +555,8 @@
 			baseConfigurationReference = A0442DDD880BA9EE37FF2829 /* Pods-xmazon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.esgi.xmazon;
@@ -501,6 +569,8 @@
 			baseConfigurationReference = 49DD386C4CEC1F938D3375EB /* Pods-xmazon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.esgi.xmazon;
