@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SlideNavigationController.h"
+#import "AMSlideMenuLeftTableViewController.h"
 
-@interface MenuViewController : UIViewController <SlideNavigationControllerDelegate>
+@interface MenuViewController : AMSlideMenuLeftTableViewController {
+    
+    @private
+    NSMutableArray* stores_;
+}
+@property (weak, nonatomic) IBOutlet UITableView *storeTableView;
 
 @end

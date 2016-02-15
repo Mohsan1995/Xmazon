@@ -10,8 +10,6 @@
 #import "MainViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "AFOAuth2Manager/AFOauth2Manager.h"
-#import "SlideNavigationController.h"
-#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,10 +19,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    MenuViewController* menu = [[MenuViewController alloc] init];
-    SlideNavigationController* slideNav = [[SlideNavigationController alloc] init];
-    slideNav.leftMenu = menu;
-    
     UIWindow* window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
     window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [MainViewController new]];
     [window makeKeyAndVisible];

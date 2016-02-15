@@ -49,6 +49,7 @@
 		66174A201C6FE1B400B30279 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		66174A211C6FE1B400B30279 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		66174A221C6FE1B400B30279 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		6698AB331C7156B400B5DADD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				66B1E5AF1C4F8709004C6955 /* main.m */,
+				6698AB331C7156B400B5DADD /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -505,6 +507,8 @@
 			baseConfigurationReference = A0442DDD880BA9EE37FF2829 /* Pods-xmazon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = xmazon/PrefixHeader.pch;
 				INFOPLIST_FILE = xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.esgi.xmazon;
@@ -517,6 +521,8 @@
 			baseConfigurationReference = 49DD386C4CEC1F938D3375EB /* Pods-xmazon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = xmazon/PrefixHeader.pch;
 				INFOPLIST_FILE = xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.esgi.xmazon;

@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMSlideMenuMainViewController.h"
 
-@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    
-    @private
-    NSMutableArray* stores_;
+@interface MainViewController : AMSlideMenuMainViewController {
 }
-@property (weak, nonatomic) IBOutlet UITableView *storeTableView;
 
 @end
