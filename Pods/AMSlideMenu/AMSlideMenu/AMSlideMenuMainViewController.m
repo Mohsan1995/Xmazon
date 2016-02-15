@@ -456,7 +456,7 @@ static NSMutableArray *allInstances;
             [self.leftSegue perform];
 
             // Fixing strange bug with iPad iOS6 when starting whit landscape orientation
-            if (SYSTEM_VERSION_LESS_THAN(@"7.0") && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.leftSegue perform];
@@ -469,7 +469,7 @@ static NSMutableArray *allInstances;
             [self.rightSegue perform];
 
             // Fixing strange bug with iPad iOS6 when starting whit landscape orientation
-            if (SYSTEM_VERSION_LESS_THAN(@"7.0") && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.rightSegue perform];
@@ -485,7 +485,7 @@ static NSMutableArray *allInstances;
             [self.rightSegue perform];
             
             // Fixing strange bug with iPad iOS6 when starting whit landscape orientation
-            if (SYSTEM_VERSION_LESS_THAN(@"7.0") && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0  && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.rightSegue perform];
@@ -498,7 +498,7 @@ static NSMutableArray *allInstances;
             [self.leftSegue perform];
             
             // Fixing strange bug with iPad iOS6 when starting whit landscape orientation
-            if (SYSTEM_VERSION_LESS_THAN(@"7.0") && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0  && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.leftSegue perform];

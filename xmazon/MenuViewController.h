@@ -14,6 +14,5 @@
     @private
     NSMutableArray* stores_;
 }
-@property (weak, nonatomic) IBOutlet UITableView *storeTableView;
 
 @end

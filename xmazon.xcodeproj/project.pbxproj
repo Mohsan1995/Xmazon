@@ -12,6 +12,10 @@
 		66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A1B1C6FDE3000B30279 /* NetworkManager.m */; };
 		66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A211C6FE1B400B30279 /* MenuViewController.m */; };
 		66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A221C6FE1B400B30279 /* MenuViewController.xib */; };
+		6698AB371C7161C000B5DADD /* FirstTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6698AB351C7161C000B5DADD /* FirstTestViewController.m */; };
+		6698AB381C7161C000B5DADD /* FirstTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6698AB361C7161C000B5DADD /* FirstTestViewController.xib */; };
+		6698AB3C1C7161FF00B5DADD /* SecondTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6698AB3A1C7161FF00B5DADD /* SecondTestViewController.m */; };
+		6698AB3D1C7161FF00B5DADD /* SecondTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6698AB3B1C7161FF00B5DADD /* SecondTestViewController.xib */; };
 		66B1E5B01C4F8709004C6955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5AF1C4F8709004C6955 /* main.m */; };
 		66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B21C4F8709004C6955 /* AppDelegate.m */; };
 		66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BA1C4F8709004C6955 /* Assets.xcassets */; };
@@ -49,7 +53,12 @@
 		66174A201C6FE1B400B30279 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		66174A211C6FE1B400B30279 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		66174A221C6FE1B400B30279 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		6698AB331C7156B400B5DADD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6698AB341C7161C000B5DADD /* FirstTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTestViewController.h; sourceTree = "<group>"; };
+		6698AB351C7161C000B5DADD /* FirstTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTestViewController.m; sourceTree = "<group>"; };
+		6698AB361C7161C000B5DADD /* FirstTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstTestViewController.xib; sourceTree = "<group>"; };
+		6698AB391C7161FF00B5DADD /* SecondTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTestViewController.h; sourceTree = "<group>"; };
+		6698AB3A1C7161FF00B5DADD /* SecondTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTestViewController.m; sourceTree = "<group>"; };
+		6698AB3B1C7161FF00B5DADD /* SecondTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondTestViewController.xib; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +157,12 @@
 				66174A201C6FE1B400B30279 /* MenuViewController.h */,
 				66174A211C6FE1B400B30279 /* MenuViewController.m */,
 				66174A221C6FE1B400B30279 /* MenuViewController.xib */,
+				6698AB341C7161C000B5DADD /* FirstTestViewController.h */,
+				6698AB351C7161C000B5DADD /* FirstTestViewController.m */,
+				6698AB361C7161C000B5DADD /* FirstTestViewController.xib */,
+				6698AB391C7161FF00B5DADD /* SecondTestViewController.h */,
+				6698AB3A1C7161FF00B5DADD /* SecondTestViewController.m */,
+				6698AB3B1C7161FF00B5DADD /* SecondTestViewController.xib */,
 			);
 			path = xmazon;
 			sourceTree = "<group>";
@@ -156,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				66B1E5AF1C4F8709004C6955 /* main.m */,
-				6698AB331C7156B400B5DADD /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,7 +307,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6698AB381C7161C000B5DADD /* FirstTestViewController.xib in Resources */,
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
+				6698AB3D1C7161FF00B5DADD /* SecondTestViewController.xib in Resources */,
 				66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */,
 				66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */,
 				66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */,
@@ -372,6 +388,8 @@
 				66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
 				66174A171C6FDCD300B30279 /* MainViewController.m in Sources */,
+				6698AB371C7161C000B5DADD /* FirstTestViewController.m in Sources */,
+				6698AB3C1C7161FF00B5DADD /* SecondTestViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
 				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,
 			);
@@ -507,8 +525,8 @@
 			baseConfigurationReference = A0442DDD880BA9EE37FF2829 /* Pods-xmazon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = xmazon/PrefixHeader.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.esgi.xmazon;
@@ -521,8 +539,8 @@
 			baseConfigurationReference = 49DD386C4CEC1F938D3375EB /* Pods-xmazon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = xmazon/PrefixHeader.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = xmazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.esgi.xmazon;

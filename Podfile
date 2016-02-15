@@ -18,3 +18,10 @@ target 'xmazonUITests' do
 
 end
 
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = ['$(inherited)', 'AMSlideMenuWithoutStoryboards']
+        end
+    end
+end
