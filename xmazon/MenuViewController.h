@@ -6,13 +6,15 @@
 //  Copyright © 2016 Quentin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "AMSlideMenuLeftTableViewController.h"
+#import "MenuItem.h"
 
 @interface MenuViewController : AMSlideMenuLeftTableViewController {
     
     @private
-    NSMutableArray* stores_;
+    NSMutableArray<MenuItem*>* menuItems;
 }
+@property (strong, nonatomic) IBOutlet UITableView *menuItemsTableView;
 
 @end

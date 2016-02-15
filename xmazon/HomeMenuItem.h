@@ -1,13 +1,13 @@
 //
-//  FirstTestViewController.h
+//  HomeMenuItem.h
 //  xmazon
 //
 //  Created by Quentin on 15/02/2016.
 //  Copyright © 2016 Quentin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MenuItem.h"
 
-@interface FirstTestViewController : UIViewController
+@interface HomeMenuItem : MenuItem
 
 @end

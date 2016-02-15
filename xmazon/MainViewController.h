@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AMSlideMenuMainViewController.h"
 
-@interface MainViewController : AMSlideMenuMainViewController {
+@interface MainViewController : UIViewController {
 }
 
 @end

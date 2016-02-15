@@ -8,8 +8,9 @@
 
 #import "MenuViewController.h"
 #import "NetworkManager.h"
-#import "FirstTestViewController.h"
-#import "SecondTestViewController.h"
+#import "MainViewController.h"
+#import "HomeMenuItem.h"
+#import "StoreMenuItem.h"
 
 @interface MenuViewController ()
 
@@ -20,22 +21,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    stores_ = [@[@"VC 1",@"VC 2"] mutableCopy];
-    /*
+    menuItems = [[NSMutableArray alloc] init];
+    [menuItems addObject:[[HomeMenuItem alloc] init]];
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
     //    [defaults setObject:nil forKey:@"app_token"];
     [NetworkManager getStoreWithSuccess:^(id responseObject) {
         for(NSString* key in [responseObject objectForKey:@"result"]) {
             NSDictionary* data = key;
-            [stores_ addObject:[data objectForKey:@"name"]];
+            [menuItems addObject:[[StoreMenuItem alloc] initWithName:[data objectForKey:@"name"] andWithId:[data objectForKey:@"id"]]];
+            [_menuItemsTableView reloadData];
         }
     } failure:^{
         NSLog(@"NOPPPPP");
-    }];*/
+    }];
+    NSLog(@"%@", self);
+    [self openContentNavigationController: [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil]]];
+}
+
+- (void) clearAndAddHome {
+    [menuItems removeAllObjects];
+    [menuItems addObject:[[HomeMenuItem alloc] init]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [stores_ count];
+    return [menuItems count];
 }
 
 static NSString* const StoreCellId = @"StoreId";
@@ -45,28 +54,13 @@ static NSString* const StoreCellId = @"StoreId";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: StoreCellId];
     }
-    cell.textLabel.text = [stores_ objectAtIndex: indexPath.row];
+    cell.textLabel.text = [[menuItems objectAtIndex: indexPath.row] name];
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UINavigationController *nvc;
-    UIViewController *rootVC;
-    switch (indexPath.row) {
-        case 0:
-        {
-            rootVC = [[FirstTestViewController alloc] initWithNibName:@"FirstTestViewController" bundle:nil];
-        }
-            break;
-        case 1:
-        {
-            rootVC = [[SecondTestViewController alloc] initWithNibName:@"SecondTestViewController" bundle:nil];
-        }
-            break;
-        default:
-            break;
-    }
-    nvc = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    
+    nvc = [[UINavigationController alloc] initWithRootViewController:[[menuItems objectAtIndex: indexPath.row] controller]];
     [self openContentNavigationController:nvc];
 }
 

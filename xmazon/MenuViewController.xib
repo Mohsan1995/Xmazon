@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="menuItemsTableView" destination="w7f-1e-8fa" id="lFF-ue-q2D"/>
                 <outlet property="view" destination="w7f-1e-8fa" id="lJM-vs-gLf"/>
             </connections>
         </placeholder>

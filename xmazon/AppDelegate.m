@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "RootViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "AFOAuth2Manager/AFOauth2Manager.h"
 
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow* window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
-    window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [MainViewController new]];
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [RootViewController new]];
     [window makeKeyAndVisible];
     self.window = window;
     return YES;

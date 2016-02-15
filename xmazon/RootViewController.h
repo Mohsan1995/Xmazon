@@ -1,5 +1,5 @@
 //
-//  SecondTestViewController.h
+//  RootViewController.h
 //  xmazon
 //
 //  Created by Quentin on 15/02/2016.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMSlideMenuMainViewController.h"
 
-@interface SecondTestViewController : UIViewController
+@interface RootViewController : AMSlideMenuMainViewController
 
 @end

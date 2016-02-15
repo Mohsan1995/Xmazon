@@ -14,7 +14,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.52617052865879921" green="1" blue="0.69207899604946044" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="480" y="408"/>
         </view>
     </objects>
