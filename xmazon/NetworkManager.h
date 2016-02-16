@@ -34,4 +34,8 @@
                         success:(void (^)(id responseObject))success
                         failure:(void (^)())failure;
 
++ (void) requestAppTokenWithUrlPost:(NSString*) url
+                            success:(void (^)(id responseObject))success
+                            failure:(void (^)())failure;
+
 @end

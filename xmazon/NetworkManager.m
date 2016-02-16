@@ -31,7 +31,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
                                                                            @"refresh_token": credential.refreshToken
                                                                            };
                                                    [defaults setObject:token forKey:type];
-                                                   NSLog(@"oauth RequestSuccess token:%@", token);
+                                                   //NSLog(@"oauth RequestSuccess token:%@", token);
                                                    success();
                                                }
                                                failure:^(NSError *error) {
@@ -95,4 +95,38 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
         }];
     }
 }
+
++ (void) requestAppTokenWithUrlPost:(NSString*) url
+                        success:(void (^)(id responseObject))success
+                        failure:(void (^)())failure{
+    NSLog(@"RequestAppToken url: %@ ", url);
+    
+    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
+    NSDictionary* appToken = [defaults objectForKey:@"app_token"];
+    if (!appToken) {
+        NSLog(@"RequestAppToken noCache");
+        [self oauthClientCredentialsWithSuccess:^{
+            [self requestAppTokenWithUrl: url success: success failure: failure];
+        } failure: failure];
+    } else {
+        NSLog(@"RequestAppToken cache");
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        NSString* authorization = [NSString stringWithFormat:@"%@%@", @"Bearer ", [appToken objectForKey:@"access_token"]];
+        [manager.requestSerializer setValue:authorization forHTTPHeaderField:@"Authorization"];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        [manager POST:[NSString stringWithFormat:@"%@%@", BASE_URL, url] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"RequestAppToken RequestSuccess: %@", responseObject);
+            success(responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"RequestAppToken RequestError: %@", error);
+            if ([operation.response statusCode] == 401) {
+                [NetworkManager refreshAppToken:[appToken objectForKey:@"refresh_token"] success:^{
+                    [self requestAppTokenWithUrl: url success: success failure: failure];
+                } failure: failure];
+            }
+        }];
+    }
+}
+
 @end
