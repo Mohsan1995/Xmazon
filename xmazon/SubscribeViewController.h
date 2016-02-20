@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SubscribeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *inputEmail;
+@property (weak, nonatomic) IBOutlet UITextField *inputPassword;
+@property (weak, nonatomic) IBOutlet UITextField *inputFirstName;
+@property (weak, nonatomic) IBOutlet UITextField *inputLastName;
+@property (weak, nonatomic) IBOutlet UITextField *inputBirth;
 
 @end

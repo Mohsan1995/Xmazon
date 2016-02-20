@@ -24,7 +24,7 @@
     menuItems = [[NSMutableArray alloc] init];
     [menuItems addObject:[[HomeMenuItem alloc] init]];
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
-    //    [defaults setObject:nil forKey:@"app_token"];
+        [defaults setObject:nil forKey:@"app_token"];
     [NetworkManager getStoreWithSuccess:^(id responseObject) {
         for(NSString* key in [responseObject objectForKey:@"result"]) {
             NSDictionary* data = key;
@@ -34,6 +34,8 @@
     } failure:^{
         NSLog(@"NOPPPPP");
     }];
+    
+    
     NSLog(@"%@", self);
     [self openContentNavigationController: [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil]]];
 }

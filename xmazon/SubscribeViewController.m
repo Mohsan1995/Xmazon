@@ -7,6 +7,7 @@
 //
 
 #import "SubscribeViewController.h"
+#import "NetworkManager.h"
 
 @interface SubscribeViewController ()
 
@@ -24,14 +25,38 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)touchSubscribe:(id)sender {
+    
+    NSLog(@"%@", _inputEmail.text);
+    
+    NSDictionary* parameters=@{
+        @"email":_inputEmail.text,
+        @"password": _inputPassword.text,
+        @"firstname": _inputFirstName.text,
+        @"lastname": _inputLastName.text,
+        @"birthdate": _inputBirth.text
+                              
+        };
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NSLog(@"%@", parameters);
+    
+    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
+    [defaults setObject:nil forKey:@"app_token"];
+    [NetworkManager setSubscribeWithSuccess:^(id responseObject) {
+        NSLog(@"%@", [responseObject objectForKey:@"code"]);
+        
+        
+        /*for(NSString* key in [responseObject objectForKey:@"result"]) {
+            NSDictionary* data = key;
+         
+        }*/
+    } failure:^{
+        NSLog(@"NOPPPPP");
+    }parameters: parameters];
+
+    
 }
-*/
+
 
 @end

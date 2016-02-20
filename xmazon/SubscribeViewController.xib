@@ -7,6 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscribeViewController">
             <connections>
+                <outlet property="inputBirth" destination="LhJ-Lc-ZEH" id="A3l-Bj-raA"/>
+                <outlet property="inputEmail" destination="TCp-lG-gMt" id="sgA-bp-6SP"/>
+                <outlet property="inputFirstName" destination="cbL-Fk-bmJ" id="gzg-wc-Xxr"/>
+                <outlet property="inputLastName" destination="Kd0-be-l2s" id="NVO-Ns-X0B"/>
+                <outlet property="inputPassword" destination="h4q-yP-uE4" id="u82-dI-k0k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,35 +21,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCp-lG-gMt">
-                    <rect key="frame" x="112" y="71" width="97" height="30"/>
+                    <rect key="frame" x="112" y="117" width="97" height="30"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <accessibility key="accessibilityConfiguration" hint="Email*"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h4q-yP-uE4">
-                    <rect key="frame" x="112" y="137" width="97" height="30"/>
+                    <rect key="frame" x="112" y="164" width="97" height="30"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <accessibility key="accessibilityConfiguration" hint="Password*"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbL-Fk-bmJ">
-                    <rect key="frame" x="112" y="188" width="97" height="30"/>
+                    <rect key="frame" x="112" y="207" width="97" height="30"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <accessibility key="accessibilityConfiguration" hint="First name"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kd0-be-l2s">
-                    <rect key="frame" x="112" y="244" width="97" height="30"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <accessibility key="accessibilityConfiguration" hint="Last name" label="test"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                </textField>
                 <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-uq-Ixj">
-                    <rect key="frame" x="0.0" y="337" width="320" height="216"/>
+                    <rect key="frame" x="0.0" y="420" width="320" height="148"/>
                     <date key="date" timeIntervalSinceReferenceDate="476890598.44770801">
                         <!--2016-02-11 13:36:38 +0000-->
                     </date>
@@ -55,33 +53,51 @@
                         <!--2015-12-31 11:00:00 +0000-->
                     </date>
                 </datePicker>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6af-8S-QV8">
-                    <rect key="frame" x="112" y="294" width="97" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birth Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-Lc-ZEH">
+                    <rect key="frame" x="112" y="295" width="97" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <accessibility key="accessibilityConfiguration" hint="Last name" label="test"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kd0-be-l2s">
+                    <rect key="frame" x="112" y="252" width="97" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <accessibility key="accessibilityConfiguration" hint="Last name" label="test"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hE-vK-Tk8">
+                    <rect key="frame" x="128" y="362" width="64" height="30"/>
+                    <state key="normal" title="S'inscrire"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6D-zr-YLD">
+                    <rect key="frame" x="128" y="362" width="64" height="30"/>
+                    <state key="normal" title="S'inscrire"/>
+                    <connections>
+                        <action selector="touchSubscribe:" destination="-1" eventType="touchUpInside" id="emf-Mp-nDZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="TCp-lG-gMt" secondAttribute="trailing" constant="111" id="5It-Uo-Hc0"/>
-                <constraint firstItem="6af-8S-QV8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="112" id="BU0-cS-8nV"/>
                 <constraint firstItem="TCp-lG-gMt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="112" id="HtN-MX-Sd4"/>
                 <constraint firstItem="Kd0-be-l2s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="112" id="Lb5-ha-TF9"/>
                 <constraint firstAttribute="trailing" secondItem="h4q-yP-uE4" secondAttribute="trailing" constant="111" id="QW8-hN-jZY"/>
+                <constraint firstAttribute="trailing" secondItem="LhJ-Lc-ZEH" secondAttribute="trailing" constant="111" id="RFA-8Z-1Ov"/>
                 <constraint firstItem="cbL-Fk-bmJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="112" id="RW4-iW-W0w"/>
                 <constraint firstAttribute="trailing" secondItem="Brq-uq-Ixj" secondAttribute="trailing" id="T5N-ag-QKP"/>
                 <constraint firstItem="h4q-yP-uE4" firstAttribute="top" secondItem="TCp-lG-gMt" secondAttribute="bottom" constant="35" id="ZMV-Zl-F6u"/>
                 <constraint firstItem="h4q-yP-uE4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="112" id="c9Y-CW-5VU"/>
-                <constraint firstItem="6af-8S-QV8" firstAttribute="top" secondItem="Kd0-be-l2s" secondAttribute="bottom" constant="26" id="dDs-4U-3IY"/>
                 <constraint firstAttribute="trailing" secondItem="cbL-Fk-bmJ" secondAttribute="trailing" constant="111" id="f1f-Tg-Rrp"/>
-                <constraint firstAttribute="trailing" secondItem="6af-8S-QV8" secondAttribute="trailing" constant="111" id="g0u-aL-bGx"/>
+                <constraint firstItem="LhJ-Lc-ZEH" firstAttribute="top" secondItem="Kd0-be-l2s" secondAttribute="bottom" constant="13" id="fqa-cC-T96"/>
                 <constraint firstItem="cbL-Fk-bmJ" firstAttribute="top" secondItem="h4q-yP-uE4" secondAttribute="bottom" constant="21" id="jZJ-4e-ZL4"/>
+                <constraint firstItem="LhJ-Lc-ZEH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="112" id="jsv-pf-m5o"/>
                 <constraint firstItem="Brq-uq-Ixj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="juN-4f-8oS"/>
                 <constraint firstAttribute="trailing" secondItem="Kd0-be-l2s" secondAttribute="trailing" constant="111" id="sMU-rI-0i3"/>
-                <constraint firstItem="6af-8S-QV8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="120" id="tPe-Nb-8hU"/>
                 <constraint firstItem="Kd0-be-l2s" firstAttribute="top" secondItem="cbL-Fk-bmJ" secondAttribute="bottom" constant="29" id="ulO-iK-oKV"/>
-                <constraint firstAttribute="trailing" secondItem="6af-8S-QV8" secondAttribute="trailing" constant="119" id="w7n-02-G6l"/>
+                <constraint firstItem="y6D-zr-YLD" firstAttribute="top" secondItem="LhJ-Lc-ZEH" secondAttribute="bottom" constant="37" id="x4d-Ss-Gr7"/>
             </constraints>
             <point key="canvasLocation" x="-620" y="-277"/>
         </view>

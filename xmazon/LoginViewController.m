@@ -7,6 +7,10 @@
 //
 
 #import "LoginViewController.h"
+#import "SubscribeViewController.h"
+#import "NetworkManager.h"
+#import "AFNetworking/AFNetworking.h"
+#import "AFOAuth2Manager/AFOauth2Manager.h"
 
 @interface LoginViewController ()
 
@@ -22,13 +26,35 @@
 
 - (IBAction)connection:(id)sender {
     
-        NSLog(@"Connection Action");
+    NSLog(@"Connection Action");
+    
+    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
+    [defaults setObject:nil forKey:@"app_token"];
+    
+    NSDictionary* parameters1= @{
+                        @"username":@"test@testa.fr",
+                            @"password":@"azertyazerty"
+                                
+                                
+                                };
+
+    
+    NSLog(@"%@",self.loginInput.text);
+    NSLog(@"%@",self.passwordInput.text);
     
 }
+
+
 
 - (IBAction)subscribe:(id)sender {
     
     NSLog(@"Create accout");
+    
+    
+    SubscribeViewController* v = [SubscribeViewController new];
+    //v.value = self.resultLabel.text;
+    [self.navigationController pushViewController:v animated:YES];
+
     
     
 }

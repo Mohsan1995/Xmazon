@@ -16,6 +16,7 @@
                success:(void (^)())success
                failure:(void (^)())failure;
 
+
 + (void) oauthClientCredentialsWithSuccess:(void (^)())success
                                    failure:(void (^)())failure;
 
@@ -30,12 +31,18 @@
 + (void) getStoreWithSuccess:(void (^)(id responseObject))success
                      failure:(void (^)())failure;
 
++ (void) getConnectionWithSuccess:(void (^)(id responseObject))success
+                     failure:(void (^)())failure parameters :(NSDictionary*) parameters;
+
 + (void) requestAppTokenWithUrl:(NSString*) url
                         success:(void (^)(id responseObject))success
                         failure:(void (^)())failure;
 
-+ (void) requestAppTokenWithUrlPost:(NSString*) url
++ (void) requestAppTokenWithUrlPost:(NSString*) url parameters:(NSDictionary*) parameters
                             success:(void (^)(id responseObject))success
                             failure:(void (^)())failure;
+
++ (void) setSubscribeWithSuccess:(void (^)(id responseObject))success
+                         failure:(void (^)())failure parameters:(NSDictionary*) param;
 
 @end
