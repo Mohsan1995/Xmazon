@@ -14,7 +14,8 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 
 @implementation NetworkManager
 
-+ (void) oauthWithType:(NSString*) type param:(NSDictionary*) params
++ (void) oauthWithType:(NSString*) type
+                 param:(NSDictionary*) params
                success:(void (^)())success
                failure:(void (^)())failure {
     NSLog(@"oauth type:%@  param:%@", type, params);
@@ -31,11 +32,11 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
                                                                            @"refresh_token": credential.refreshToken
                                                                            };
                                                    [defaults setObject:token forKey:type];
-                                                   NSLog(@"oauth RequestSuccess token:%@", token);
+                                                   NSLog(@"oauth %@ RequestSuccess token:%@", type, token);
                                                    success();
                                                }
                                                failure:^(NSError *error) {
-                                                   NSLog(@"oauth RequestError error:%@", error);
+                                                   NSLog(@"oauth %@ RequestError error:%@", type, error);
                                                    failure();
                                                }];
 }
@@ -43,6 +44,13 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 + (void) oauthClientCredentialsWithSuccess:(void (^)())success
                                    failure:(void (^)())failure {
     [self oauthWithType:@"app_token" param:@{@"grant_type":@"client_credentials"} success: success failure: failure];
+}
+
++ (void) oauthUserWithUserName:(NSString*) email
+                   password:(NSString*) password
+                   successs:(void (^)())success
+                    failure:(void (^)())failure {
+    [self oauthWithType:@"client_token" param:@{@"grant_type":@"password", @"username": email, @"password": password} success: success failure: failure];
 }
 
 + (void) refreshToken:(NSString*) token type:(NSString*) type
@@ -58,47 +66,82 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
     [self refreshToken: token type: @"app_token" success:success failure:failure];
 }
 
++ (void) refreshClientToken:(NSString*) token
+                 success:(void (^)())success
+                 failure:(void (^)())failure {
+    [self refreshToken: token type: @"client_token" success:success failure:failure];
+}
+
 + (void) getStoreWithSuccess:(void (^)(id responseObject))success
                      failure:(void (^)())failure {
-    [self requestAppTokenWithUrl:@"/store/list" success:success failure:failure];
+    [self requestAppTokenWithMethod:@"GET" WithUrl:@"/store/list" param:nil success:success failure:failure];
 }
 
 + (void) getCategoryWithStoreUid:(NSString*) uid
                         sucess:(void (^)(id responseObject))success
                         failure:(void (^)())failure {
-    [self requestAppTokenWithUrl:[NSString stringWithFormat:@"%@%@", @"/category/list?store_uid=", uid] success:success failure:failure];
+    [self requestAppTokenWithMethod:@"GET" WithUrl:[NSString stringWithFormat:@"%@%@", @"/category/list?store_uid=", uid] param:nil success:success failure:failure];
 }
 
-+ (void) requestAppTokenWithUrl:(NSString*) url
++ (void) requestAppTokenWithMethod:(NSString*) method
+                           WithUrl:(NSString*) url
+                             param:(NSDictionary*) params
                         success:(void (^)(id responseObject))success
-                        failure:(void (^)())failure{
-    NSLog(@"RequestAppToken url: %@ ", url);
+                        failure:(void (^)())failure {
+    [self requestWithType:@"app_token" method:method url:url param:params success:success failure:failure];
+}
+
++ (void) requestClientTokenWithMethod:(NSString*) method
+                           WithUrl:(NSString*) url
+                             param:(NSDictionary*) params
+                           success:(void (^)(id responseObject))success
+                           failure:(void (^)())failure {
+    [self requestWithType:@"client_token" method:method url:url param:params success:success failure:failure];
+}
+
++ (void) requestWithType:(NSString*) type
+                    method:(NSString*) method
+                       url:(NSString*) url
+                     param:(NSDictionary*) params
+                   success:(void (^)(id responseObject))success
+                   failure:(void (^)())failure {
     
+    NSLog(@"Request %@ url: %@ ", type, url);
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
-    NSDictionary* appToken = [defaults objectForKey:@"app_token"];
-    if (!appToken) {
-        NSLog(@"RequestAppToken noCache");
+    NSDictionary* token = [defaults objectForKey:type];
+    if (!token) {
+        NSLog(@"Request %@ noCache", type);
         [self oauthClientCredentialsWithSuccess:^{
-            [self requestAppTokenWithUrl: url success: success failure: failure];
+            [self requestWithType:type method:method url:url param:params success:success failure:failure];
         } failure: failure];
     } else {
-        NSLog(@"RequestAppToken cache");
+        NSLog(@"Request %@ cache %@", type, token);
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-        NSString* authorization = [NSString stringWithFormat:@"%@%@", @"Bearer ", [appToken objectForKey:@"access_token"]];
+        NSString* authorization = [NSString stringWithFormat:@"%@%@", @"Bearer ", [token objectForKey:@"access_token"]];
         [manager.requestSerializer setValue:authorization forHTTPHeaderField:@"Authorization"];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        [manager GET:[NSString stringWithFormat:@"%@%@", BASE_URL, url] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"RequestAppToken RequestSuccess: %@", responseObject);
+        id requestSuccess = ^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"Request %@ RequestSuccess: %@", type, responseObject);
             success(responseObject);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"RequestAppToken RequestError: %@", error);
+        };
+        
+        id requestFailure = ^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Request %@ RequestError: %@", type, error);
             if ([operation.response statusCode] == 401) {
-                [NetworkManager refreshAppToken:[appToken objectForKey:@"refresh_token"] success:^{
-                    [self requestAppTokenWithUrl: url success: success failure: failure];
+                [NetworkManager refreshAppToken:[token objectForKey:@"refresh_token"] success:^{
+                    [self requestWithType:type method:method url:url param:params success:success failure:failure];
                 } failure: failure];
             }
-        }];
+        };
+        NSString* fullUrl = [NSString stringWithFormat:@"%@%@", BASE_URL, url];
+        if ([method isEqualToString:@"GET"]) {
+            [manager GET:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
+        } else if ([method isEqualToString:@"POST"]) {
+            [manager POST:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
+        } else if ([method isEqualToString:@"PUT"]) {
+            [manager PUT:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
+        }
     }
 }
 @end
