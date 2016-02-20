@@ -10,8 +10,8 @@
 
 @interface StoreViewController : UIViewController {
     @private
-    NSString* id_;
+    NSString* uid_;
 }
-@property(strong, nonatomic) NSString* Id;
+@property(strong, nonatomic) NSString* uid;
 
 @end

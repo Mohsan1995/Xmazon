@@ -11,15 +11,15 @@
 
 @implementation StoreMenuItem
 
-@synthesize Id = id_;
+@synthesize uid = uid_;
 
-- (id) initWithName:(NSString *)name andWithId:(NSString*)Id {
+- (id) initWithName:(NSString *)name andWithUid:(NSString*)uid {
     StoreViewController* storeViewController = [StoreViewController new];
-    storeViewController.Id = self.Id;
+    storeViewController.uid = uid;
     storeViewController.title = name;
     self = [super initWithName:name andWithController:storeViewController];
     if (self) {
-        self.Id = Id;
+        self.uid = uid;
     }
     return self;
 }

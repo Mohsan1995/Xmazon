@@ -11,10 +11,10 @@
 @interface StoreMenuItem : MenuItem {
     
     @private
-    NSString* id_;
+    NSString* uid_;
 }
-@property(strong, nonatomic) NSString* Id;
+@property(strong, nonatomic) NSString* uid;
 
-- (id) initWithName:(NSString *)name andWithId:(NSString*)Id;
+- (id) initWithName:(NSString *)name andWithUid:(NSString*)uid;
 
 @end

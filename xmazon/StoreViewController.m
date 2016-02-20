@@ -7,16 +7,23 @@
 //
 
 #import "StoreViewController.h"
+#import "NetworkManager.h"
 
 @interface StoreViewController ()
 
 @end
 
 @implementation StoreViewController
-@synthesize Id = id_;
+@synthesize uid = uid_;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [NetworkManager getCategoryWithStoreUid:uid_ sucess:^(id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^{
+        NSLog(@"NOPPPPP");
+    }];
+    NSLog(@"%@", self);
 }
 
 - (void)didReceiveMemoryWarning {

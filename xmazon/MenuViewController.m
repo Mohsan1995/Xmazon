@@ -28,7 +28,7 @@
     [NetworkManager getStoreWithSuccess:^(id responseObject) {
         for(NSString* key in [responseObject objectForKey:@"result"]) {
             NSDictionary* data = key;
-            [menuItems addObject:[[StoreMenuItem alloc] initWithName:[data objectForKey:@"name"] andWithId:[data objectForKey:@"id"]]];
+            [menuItems addObject:[[StoreMenuItem alloc] initWithName:[data objectForKey:@"name"] andWithUid:[data objectForKey:@"uid"]]];
             [_menuItemsTableView reloadData];
         }
     } failure:^{

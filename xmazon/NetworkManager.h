@@ -30,6 +30,12 @@
 + (void) getStoreWithSuccess:(void (^)(id responseObject))success
                      failure:(void (^)())failure;
 
+
++ (void) getCategoryWithStoreUid:(NSString*) uid
+                         sucess:(void (^)(id responseObject))success
+                        failure:(void (^)())failure;
+
+
 + (void) requestAppTokenWithUrl:(NSString*) url
                         success:(void (^)(id responseObject))success
                         failure:(void (^)())failure;

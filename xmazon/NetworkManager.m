@@ -63,6 +63,12 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
     [self requestAppTokenWithUrl:@"/store/list" success:success failure:failure];
 }
 
++ (void) getCategoryWithStoreUid:(NSString*) uid
+                        sucess:(void (^)(id responseObject))success
+                        failure:(void (^)())failure {
+    [self requestAppTokenWithUrl:[NSString stringWithFormat:@"%@%@", @"/category/list?store_uid=", uid] success:success failure:failure];
+}
+
 + (void) requestAppTokenWithUrl:(NSString*) url
                         success:(void (^)(id responseObject))success
                         failure:(void (^)())failure{
