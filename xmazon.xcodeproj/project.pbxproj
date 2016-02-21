@@ -26,6 +26,18 @@
 		66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F91C725FEC0030ED7A /* StoreViewController.m */; };
 		66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E446FA1C725FEC0030ED7A /* StoreViewController.xib */; };
 		A5F1A1E029C1431084E9EEBA /* libPods-xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B0E27C0E059A5E54CD7923 /* libPods-xmazon.a */; };
+		C207A5271C73CEF30028E864 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C207A5251C73CEF30028E864 /* SubscribeViewController.m */; };
+		C207A5281C73CEF30028E864 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C207A5251C73CEF30028E864 /* SubscribeViewController.m */; };
+		C207A5291C73CEF30028E864 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C207A5251C73CEF30028E864 /* SubscribeViewController.m */; };
+		C207A52A1C73CEF30028E864 /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C207A5261C73CEF30028E864 /* SubscribeViewController.xib */; };
+		C207A52B1C73CEF30028E864 /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C207A5261C73CEF30028E864 /* SubscribeViewController.xib */; };
+		C207A52C1C73CEF30028E864 /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C207A5261C73CEF30028E864 /* SubscribeViewController.xib */; };
+		C2C2B75F1C727B9D00F4DDED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C2B75D1C727B9D00F4DDED /* LoginViewController.m */; };
+		C2C2B7601C727B9D00F4DDED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C2B75D1C727B9D00F4DDED /* LoginViewController.m */; };
+		C2C2B7611C727B9D00F4DDED /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C2B75D1C727B9D00F4DDED /* LoginViewController.m */; };
+		C2C2B7621C727B9D00F4DDED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C2B75E1C727B9D00F4DDED /* LoginViewController.xib */; };
+		C2C2B7631C727B9D00F4DDED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C2B75E1C727B9D00F4DDED /* LoginViewController.xib */; };
+		C2C2B7641C727B9D00F4DDED /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C2B75E1C727B9D00F4DDED /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +95,12 @@
 		66E446F91C725FEC0030ED7A /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		66E446FA1C725FEC0030ED7A /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
 		A0442DDD880BA9EE37FF2829 /* Pods-xmazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xmazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xmazon/Pods-xmazon.debug.xcconfig"; sourceTree = "<group>"; };
+		C207A5241C73CEF30028E864 /* SubscribeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeViewController.h; sourceTree = "<group>"; };
+		C207A5251C73CEF30028E864 /* SubscribeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeViewController.m; sourceTree = "<group>"; };
+		C207A5261C73CEF30028E864 /* SubscribeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeViewController.xib; sourceTree = "<group>"; };
+		C2C2B75C1C727B9D00F4DDED /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C2C2B75D1C727B9D00F4DDED /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C2C2B75E1C727B9D00F4DDED /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +225,12 @@
 				66E446F81C725FEC0030ED7A /* StoreViewController.h */,
 				66E446F91C725FEC0030ED7A /* StoreViewController.m */,
 				66E446FA1C725FEC0030ED7A /* StoreViewController.xib */,
+				C2C2B75C1C727B9D00F4DDED /* LoginViewController.h */,
+				C2C2B75D1C727B9D00F4DDED /* LoginViewController.m */,
+				C2C2B75E1C727B9D00F4DDED /* LoginViewController.xib */,
+				C207A5241C73CEF30028E864 /* SubscribeViewController.h */,
+				C207A5251C73CEF30028E864 /* SubscribeViewController.m */,
+				C207A5261C73CEF30028E864 /* SubscribeViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -342,8 +366,10 @@
 			files = (
 				66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */,
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
+				C2C2B7621C727B9D00F4DDED /* LoginViewController.xib in Resources */,
 				66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */,
 				66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */,
+				C207A52A1C73CEF30028E864 /* SubscribeViewController.xib in Resources */,
 				66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +378,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C2B7631C727B9D00F4DDED /* LoginViewController.xib in Resources */,
+				C207A52B1C73CEF30028E864 /* SubscribeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +387,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C2B7641C727B9D00F4DDED /* LoginViewController.xib in Resources */,
+				C207A52C1C73CEF30028E864 /* SubscribeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +452,13 @@
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
 				66E446EC1C7259740030ED7A /* RootViewController.m in Sources */,
 				66E446F41C725E520030ED7A /* HomeMenuItem.m in Sources */,
+				C207A5271C73CEF30028E864 /* SubscribeViewController.m in Sources */,
 				66174A171C6FDCD300B30279 /* MainViewController.m in Sources */,
 				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
 				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
 				66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */,
+				C2C2B75F1C727B9D00F4DDED /* LoginViewController.m in Sources */,
 				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,7 +467,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C2B7601C727B9D00F4DDED /* LoginViewController.m in Sources */,
 				66B1E5C91C4F8709004C6955 /* xmazonTests.m in Sources */,
+				C207A5281C73CEF30028E864 /* SubscribeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C2B7611C727B9D00F4DDED /* LoginViewController.m in Sources */,
 				66B1E5D41C4F8709004C6955 /* xmazonUITests.m in Sources */,
+				C207A5291C73CEF30028E864 /* SubscribeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,11 +15,16 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 @implementation NetworkManager
 
 
+
+
+//-----------------------------------------------------
+//AUTH
+//-----------------------------------------------------
 //Permet d'exécuter une requête sur oauth/token et sauvegarde les token en fonction du type
 //type: [app_token | client_token]
 //params: le corps de la requête
 + (void) oauthWithType:(NSString*) type
-                 param:(NSDictionary*) params
+                 params:(NSDictionary*) params
                success:(void (^)())success
                failure:(void (^)())failure {
     NSLog(@"oauth type:%@  param:%@", type, params);
@@ -48,27 +53,41 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 }
 
 
+
 //Pour authentifier l'app
 + (void) oauthClientCredentialsWithSuccess:(void (^)())success
                                    failure:(void (^)())failure {
-    [self oauthWithType:@"app_token" param:@{@"grant_type":@"client_credentials"} success: success failure: failure];
+    [self oauthWithType:@"app_token" params:@{@"grant_type":@"client_credentials"} success: success failure: failure];
 }
+
+
 
 //Pour authentifier le client
 + (void) oauthUserWithUserName:(NSString*) email
-                   password:(NSString*) password
-                   successs:(void (^)())success
-                    failure:(void (^)())failure {
-    [self oauthWithType:@"client_token" param:@{@"grant_type":@"password", @"username": email, @"password": password} success: success failure: failure];
+                      password:(NSString*) password
+                      successs:(void (^)())success
+                       failure:(void (^)())failure {
+    [self oauthWithType:@"client_token" params:@{@"grant_type":@"password", @"username": email, @"password": password} success: success failure: failure];
 }
+//-----------------------------------------------------
+//-----------------------------------------------------
 
+
+
+
+//-----------------------------------------------------
+//REFRESH
+//-----------------------------------------------------
 //Pour refresh le token
-+ (void) refreshToken:(NSString*) token type:(NSString*) type
++ (void) refreshToken:(NSString*) token
+                 type:(NSString*) type
               success:(void (^)())success
               failure:(void (^)())failure {
     NSLog(@"refreshToken token:%@  type:%@", token, type);
-    [self oauthWithType: type param:@{@"grant_type":@"refresh_token", @"refresh_token": token} success: success failure: failure];
+    [self oauthWithType: type params:@{@"grant_type":@"refresh_token", @"refresh_token": token} success: success failure: failure];
 }
+
+
 
 //Pour refresh l'app token
 + (void) refreshAppToken:(NSString*) token
@@ -77,56 +96,34 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
     [self refreshToken: token type: @"app_token" success:success failure:failure];
 }
 
+
+
 //Pour refresh le client token
 + (void) refreshClientToken:(NSString*) token
-                 success:(void (^)())success
-                 failure:(void (^)())failure {
+                    success:(void (^)())success
+                    failure:(void (^)())failure {
     [self refreshToken: token type: @"client_token" success:success failure:failure];
 }
-
-//Récuprer les stores
-+ (void) getStoreWithSuccess:(void (^)(id responseObject))success
-                     failure:(void (^)())failure {
-    [self requestAppTokenWithMethod:@"GET" WithUrl:@"/store/list" param:nil success:success failure:failure];
-}
-
-//Récuprer les catégorie d'un store
-+ (void) getCategoryWithStoreUid:(NSString*) uid
-                        sucess:(void (^)(id responseObject))success
-                        failure:(void (^)())failure {
-    [self requestAppTokenWithMethod:@"GET" WithUrl:[NSString stringWithFormat:@"%@%@", @"/category/list?store_uid=", uid] param:nil success:success failure:failure];
-}
-
-//Exécuter un requête utilisant l'app token
-+ (void) requestAppTokenWithMethod:(NSString*) method
-                           WithUrl:(NSString*) url
-                             param:(NSDictionary*) params
-                        success:(void (^)(id responseObject))success
-                        failure:(void (^)())failure {
-    [self requestWithType:@"app_token" method:method url:url param:params success:success failure:failure];
-}
-
-//Exécuter un requête utilisant le client token
-+ (void) requestClientTokenWithMethod:(NSString*) method
-                           WithUrl:(NSString*) url
-                             param:(NSDictionary*) params
-                           success:(void (^)(id responseObject))success
-                           failure:(void (^)())failure {
-    [self requestWithType:@"client_token" method:method url:url param:params success:success failure:failure];
-}
+//-----------------------------------------------------
+//-----------------------------------------------------
 
 
+
+
+//-----------------------------------------------------
+//REQUEST
+//-----------------------------------------------------
 //Permet d'exécuter une requête
 //type: [app_token | client_token]
 //method: [GET | POST | PUT]
 //url: l'url
 //params: le corps de la requête
 + (void) requestWithType:(NSString*) type
-                    method:(NSString*) method
-                       url:(NSString*) url
-                     param:(NSDictionary*) params
-                   success:(void (^)(id responseObject))success
-                   failure:(void (^)())failure {
+                  method:(NSString*) method
+                     url:(NSString*) url
+                   params:(NSDictionary*) params
+                 success:(void (^)(id responseObject))success
+                 failure:(void (^)())failure {
     
     NSLog(@"Request %@ url: %@ ", type, url);
     
@@ -138,7 +135,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
         if ([type isEqualToString:@"app_token"]) {//Si c'est l'app token
             //On s'authentifie
             [self oauthClientCredentialsWithSuccess:^{
-                [self requestWithType:type method:method url:url param:params success:success failure:failure];
+                [self requestWithType:type method:method url:url params:params success:success failure:failure];
             } failure: failure];
         } else {//Sinon si c'est le client token
             //On execute le callback d'erreur
@@ -166,7 +163,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
             if ([operation.response statusCode] == 401) { //Si l'erreur est de type 401
                 //On essaye de refresh le token
                 [NetworkManager refreshToken:[token objectForKey:@"refresh_token"] type:type success:^{
-                    [self requestWithType:type method:method url:url param:params success:success failure:failure];
+                    [self requestWithType:type method:method url:url params:params success:success failure:failure];
                 } failure:failure];
             }
         };
@@ -183,5 +180,59 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
             [manager PUT:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
         }
     }
+}
+
+
+//Exécuter un requête utilisant l'app token
++ (void) requestAppTokenWithMethod:(NSString*) method
+                           WithUrl:(NSString*) url
+                             params:(NSDictionary*) params
+                           success:(void (^)(id responseObject))success
+                           failure:(void (^)())failure {
+    [self requestWithType:@"app_token" method:method url:url params:params success:success failure:failure];
+}
+
+
+
+//Exécuter un requête utilisant le client token
++ (void) requestClientTokenWithMethod:(NSString*) method
+                              WithUrl:(NSString*) url
+                                params:(NSDictionary*) params
+                              success:(void (^)(id responseObject))success
+                              failure:(void (^)())failure {
+    [self requestWithType:@"client_token" method:method url:url params:params success:success failure:failure];
+}
+//-----------------------------------------------------
+//-----------------------------------------------------
+
+
+
+
+//-----------------------------------------------------
+//Custom REQUEST
+//-----------------------------------------------------
+
+
+//Récuprer les stores
++ (void) getStoreWithSuccess:(void (^)(id responseObject))success
+                     failure:(void (^)())failure {
+    [self requestAppTokenWithMethod:@"GET" WithUrl:@"/store/list" params:nil success:success failure:failure];
+}
+
+
+
+//Récuprer les catégorie d'un store
++ (void) getCategoryWithStoreUid:(NSString*) uid
+                          sucess:(void (^)(id responseObject))success
+                         failure:(void (^)())failure {
+    [self requestAppTokenWithMethod:@"GET" WithUrl:[NSString stringWithFormat:@"%@%@", @"/category/list?store_uid=", uid] params:nil success:success failure:failure];
+}
+
+
+//Method use for subscription
++ (void) subscribeWithParams:(NSDictionary*) params
+                            success:(void (^)(id responseObject))success
+                         failure:(void (^)())failure {
+    [self requestAppTokenWithMethod:@"POST" WithUrl:@"/auth/subscribe" params:params success:success failure:failure];
 }
 @end

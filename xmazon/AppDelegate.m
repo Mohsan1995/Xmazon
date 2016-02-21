@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "SubscribeViewController.h"
 #import "RootViewController.h"
 #import "AFNetworking/AFNetworking.h"
-#import "AFOAuth2Manager/AFOauth2Manager.h"
+#import "AFOAuth2Manager/AFOAuth2Manager.h"
+#import "AFOAuth2Manager/AFHTTPRequestSerializer+OAuth2.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow* window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
-    window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [RootViewController new]];
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [LoginViewController new]];
     [window makeKeyAndVisible];
     self.window = window;
+   
     return YES;
 }
 
