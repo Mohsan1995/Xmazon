@@ -70,10 +70,5 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <state key="normal" title="Create account"/>
         </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hlg-tf-m8s">
-            <rect key="frame" x="0.0" y="0.0" width="117" height="30"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Connection"/>
-        </button>
     </objects>
 </document>

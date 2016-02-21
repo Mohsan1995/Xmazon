@@ -95,6 +95,11 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 
 
 
++ (void) getConnectionWithSuccess:(void (^)(id responseObject))success
+                          failure:(void (^)())failure parameters:(NSDictionary*) parameters {
+    [self requestAppTokenWithUrlPost:@"/oauth/token" parameters:(NSDictionary*) parameters success:success failure:failure];
+}
+
 + (void) refreshToken:(NSString*) token type:(NSString*) type
               success:(void (^)())success
               failure:(void (^)())failure {
@@ -151,6 +156,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
     }
 }
 
+//Method use for subscription
 + (void) setSubscribeWithSuccess:(void (^)(id responseObject))success
                          failure:(void (^)())failure parameters:(NSDictionary*) param{
     [self requestAppTokenWithUrlPost:@"/auth/subscribe" parameters: param
@@ -199,10 +205,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
     
 }
 
-+ (void) getConnectionWithSuccess:(void (^)(id responseObject))success
-                     failure:(void (^)())failure parameters:(NSDictionary*) parameters {
-    [self requestAppTokenWithUrlPost:@"/oauth/token" parameters:(NSDictionary*) parameters success:success failure:failure];
-}
+
 
 
 

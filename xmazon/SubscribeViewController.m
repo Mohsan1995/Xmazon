@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"Inscription";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -25,38 +26,59 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)touchSubscribe:(id)sender {
+- (void)  showAlertMessage:(NSString*) myMessage{
+    UIAlertController *alertController;
+    alertController = [UIAlertController alertControllerWithTitle:@"Subscribe" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
+    
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+
+
+- (IBAction)subscribe:(id)sender {
     
     NSLog(@"%@", _inputEmail.text);
-    
     NSDictionary* parameters=@{
-        @"email":_inputEmail.text,
-        @"password": _inputPassword.text,
-        @"firstname": _inputFirstName.text,
-        @"lastname": _inputLastName.text,
-        @"birthdate": _inputBirth.text
-                              
-        };
-
+                               @"email":self.inputEmail.text,
+                               @"password": self.inputPassword.text,
+                               @"firstname": self.inputFirstName.text,
+                               @"lastname": self.inputLastName.text,
+                               @"birthdate": self.inputBirth.text
+                               
+                               };
+    
     
     NSLog(@"%@", parameters);
     
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
     [defaults setObject:nil forKey:@"app_token"];
     [NetworkManager setSubscribeWithSuccess:^(id responseObject) {
-        NSLog(@"%@", [responseObject objectForKey:@"code"]);
+
         
-        
-        /*for(NSString* key in [responseObject objectForKey:@"result"]) {
-            NSDictionary* data = key;
-         
+    NSString* string = [responseObject objectForKey:@"code"];
+
+    NSLog(@"Response api  %@", string);
+    
+        /*if ([responseObject objectForKey:@"code"]) {
+            [self showAlertMessage:@"Une erreur est survenue lors de la création de votre compte"];
+        }else{
+            [self showAlertMessage:@"Votre compte a été bien été crée"];
+            
         }*/
+        
+        
+        
     } failure:^{
         NSLog(@"NOPPPPP");
     }parameters: parameters];
-
-    
 }
+
+
+
 
 
 @end

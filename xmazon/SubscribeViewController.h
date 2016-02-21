@@ -14,5 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *inputFirstName;
 @property (weak, nonatomic) IBOutlet UITextField *inputLastName;
 @property (weak, nonatomic) IBOutlet UITextField *inputBirth;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
+
+
+- (void)  showAlertMessage:(NSString*) myMessage;
 
 @end
