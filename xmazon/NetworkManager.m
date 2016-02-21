@@ -212,6 +212,11 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 //Custom REQUEST
 //-----------------------------------------------------
 
+//Recupère informations utilisateur
++ (void) getUserWithSuccess:(void (^)(id responseObject))success
+                    failure:(void (^)())failure {
+    [self requestAppTokenWithMethod:@"GET" WithUrl:@"/user" params:nil success:success failure:failure];
+}
 
 //Récuprer les stores
 + (void) getStoreWithSuccess:(void (^)(id responseObject))success
@@ -231,8 +236,8 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 
 //Method use for subscription
 + (void) subscribeWithParams:(NSDictionary*) params
-                            success:(void (^)(id responseObject))success
-                         failure:(void (^)())failure {
+                     success:(void (^)(id responseObject))success
+                     failure:(void (^)())failure {
     [self requestAppTokenWithMethod:@"POST" WithUrl:@"/auth/subscribe" params:params success:success failure:failure];
 }
 @end

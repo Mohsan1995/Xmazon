@@ -71,7 +71,8 @@
 
 
 
-
++ (void) getUserWithSuccess:(void (^)(id responseObject))success
+                    failure:(void (^)())failure;
 
 + (void) getStoreWithSuccess:(void (^)(id responseObject))success
                      failure:(void (^)())failure;
