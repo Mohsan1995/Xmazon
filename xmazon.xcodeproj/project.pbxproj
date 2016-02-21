@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66174A171C6FDCD300B30279 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A151C6FDCD300B30279 /* MainViewController.m */; };
-		66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A161C6FDCD300B30279 /* MainViewController.xib */; };
 		66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A1B1C6FDE3000B30279 /* NetworkManager.m */; };
 		66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A211C6FE1B400B30279 /* MenuViewController.m */; };
 		66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A221C6FE1B400B30279 /* MenuViewController.xib */; };
 		66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FB1C7A018000456473 /* SectionMenuItem.m */; };
+		66AAC2001C7A177A00456473 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FE1C7A177A00456473 /* UserViewController.m */; };
+		66AAC2011C7A177A00456473 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AAC1FF1C7A177A00456473 /* UserViewController.xib */; };
 		66B1E5B01C4F8709004C6955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5AF1C4F8709004C6955 /* main.m */; };
 		66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B21C4F8709004C6955 /* AppDelegate.m */; };
 		66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BA1C4F8709004C6955 /* Assets.xcassets */; };
@@ -21,7 +21,6 @@
 		66B1E5D41C4F8709004C6955 /* xmazonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5D31C4F8709004C6955 /* xmazonUITests.m */; };
 		66E446EC1C7259740030ED7A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446EB1C7259740030ED7A /* RootViewController.m */; };
 		66E446F11C725CA00030ED7A /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F01C725CA00030ED7A /* MenuItem.m */; };
-		66E446F41C725E520030ED7A /* HomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F31C725E520030ED7A /* HomeMenuItem.m */; };
 		66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F61C725F2F0030ED7A /* StoreMenuItem.m */; };
 		66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E446F91C725FEC0030ED7A /* StoreViewController.m */; };
 		66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E446FA1C725FEC0030ED7A /* StoreViewController.xib */; };
@@ -60,9 +59,6 @@
 /* Begin PBXFileReference section */
 		31B0E27C0E059A5E54CD7923 /* libPods-xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD386C4CEC1F938D3375EB /* Pods-xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-xmazon/Pods-xmazon.release.xcconfig"; sourceTree = "<group>"; };
-		66174A141C6FDCD300B30279 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		66174A151C6FDCD300B30279 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		66174A161C6FDCD300B30279 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		66174A1A1C6FDE3000B30279 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		66174A1B1C6FDE3000B30279 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		66174A201C6FE1B400B30279 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -70,6 +66,9 @@
 		66174A221C6FE1B400B30279 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		66AAC1FA1C7A018000456473 /* SectionMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionMenuItem.h; sourceTree = "<group>"; };
 		66AAC1FB1C7A018000456473 /* SectionMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionMenuItem.m; sourceTree = "<group>"; };
+		66AAC1FD1C7A177A00456473 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		66AAC1FE1C7A177A00456473 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		66AAC1FF1C7A177A00456473 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,8 +86,6 @@
 		66E446EB1C7259740030ED7A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		66E446EF1C725CA00030ED7A /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
 		66E446F01C725CA00030ED7A /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
-		66E446F21C725E520030ED7A /* HomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuItem.h; sourceTree = "<group>"; };
-		66E446F31C725E520030ED7A /* HomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuItem.m; sourceTree = "<group>"; };
 		66E446F51C725F2F0030ED7A /* StoreMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreMenuItem.h; sourceTree = "<group>"; };
 		66E446F61C725F2F0030ED7A /* StoreMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreMenuItem.m; sourceTree = "<group>"; };
 		66E446F81C725FEC0030ED7A /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -219,9 +216,6 @@
 				66174A201C6FE1B400B30279 /* MenuViewController.h */,
 				66174A211C6FE1B400B30279 /* MenuViewController.m */,
 				66174A221C6FE1B400B30279 /* MenuViewController.xib */,
-				66174A141C6FDCD300B30279 /* MainViewController.h */,
-				66174A151C6FDCD300B30279 /* MainViewController.m */,
-				66174A161C6FDCD300B30279 /* MainViewController.xib */,
 				66E446F81C725FEC0030ED7A /* StoreViewController.h */,
 				66E446F91C725FEC0030ED7A /* StoreViewController.m */,
 				66E446FA1C725FEC0030ED7A /* StoreViewController.xib */,
@@ -231,6 +225,9 @@
 				C207A5241C73CEF30028E864 /* SubscribeViewController.h */,
 				C207A5251C73CEF30028E864 /* SubscribeViewController.m */,
 				C207A5261C73CEF30028E864 /* SubscribeViewController.xib */,
+				66AAC1FD1C7A177A00456473 /* UserViewController.h */,
+				66AAC1FE1C7A177A00456473 /* UserViewController.m */,
+				66AAC1FF1C7A177A00456473 /* UserViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -242,8 +239,6 @@
 				66AAC1FB1C7A018000456473 /* SectionMenuItem.m */,
 				66E446EF1C725CA00030ED7A /* MenuItem.h */,
 				66E446F01C725CA00030ED7A /* MenuItem.m */,
-				66E446F21C725E520030ED7A /* HomeMenuItem.h */,
-				66E446F31C725E520030ED7A /* HomeMenuItem.m */,
 				66E446F51C725F2F0030ED7A /* StoreMenuItem.h */,
 				66E446F61C725F2F0030ED7A /* StoreMenuItem.m */,
 			);
@@ -364,10 +359,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AAC2011C7A177A00456473 /* UserViewController.xib in Resources */,
 				66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */,
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
 				C2C2B7621C727B9D00F4DDED /* LoginViewController.xib in Resources */,
-				66174A181C6FDCD300B30279 /* MainViewController.xib in Resources */,
 				66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */,
 				C207A52A1C73CEF30028E864 /* SubscribeViewController.xib in Resources */,
 				66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */,
@@ -451,14 +446,13 @@
 				66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
 				66E446EC1C7259740030ED7A /* RootViewController.m in Sources */,
-				66E446F41C725E520030ED7A /* HomeMenuItem.m in Sources */,
 				C207A5271C73CEF30028E864 /* SubscribeViewController.m in Sources */,
-				66174A171C6FDCD300B30279 /* MainViewController.m in Sources */,
 				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
 				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
 				66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */,
 				C2C2B75F1C727B9D00F4DDED /* LoginViewController.m in Sources */,
+				66AAC2001C7A177A00456473 /* UserViewController.m in Sources */,
 				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

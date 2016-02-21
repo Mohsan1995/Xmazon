@@ -8,8 +8,7 @@
 
 #import "MenuViewController.h"
 #import "NetworkManager.h"
-#import "MainViewController.h"
-#import "HomeMenuItem.h"
+#import "UserViewController.h"
 #import "StoreMenuItem.h"
 
 @interface MenuViewController ()
@@ -24,7 +23,8 @@
     sectionMenuItems = [[NSMutableArray alloc] init];
     
     SectionMenuItem* clientSection = [[SectionMenuItem alloc] initWitTitle:@"Client"];
-    [clientSection addMenu:[[HomeMenuItem alloc] init]];
+    [clientSection addMenu:[[MenuItem alloc] initWithName:@"Mon Compte" andWithController:[UserViewController new]]];
+    [clientSection addMenu:[[MenuItem alloc] initWithName:@"Mon Panier" andWithController:nil]];
     [sectionMenuItems addObject:clientSection];
     
     SectionMenuItem* storesSection = [[SectionMenuItem alloc] initWitTitle:@"Store"];
@@ -40,8 +40,6 @@
     } failure:^{
         NSLog(@"NOPPPPP");
     }];
-    NSLog(@"%@", self);
-    [self openContentNavigationController: [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil]]];
 }
 
 //Section
