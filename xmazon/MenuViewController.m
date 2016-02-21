@@ -21,14 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menuItems = [[NSMutableArray alloc] init];
-    [menuItems addObject:[[HomeMenuItem alloc] init]];
-    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
-    //    [defaults setObject:nil forKey:@"app_token"];
+    sectionMenuItems = [[NSMutableArray alloc] init];
+    
+    SectionMenuItem* clientSection = [[SectionMenuItem alloc] initWitTitle:@"Client"];
+    [clientSection addMenu:[[HomeMenuItem alloc] init]];
+    [sectionMenuItems addObject:clientSection];
+    
+    SectionMenuItem* storesSection = [[SectionMenuItem alloc] initWitTitle:@"Store"];
+    [sectionMenuItems addObject: storesSection];
+    
     [NetworkManager getStoreWithSuccess:^(id responseObject) {
+        [storesSection clearMenu];
         for(NSString* key in [responseObject objectForKey:@"result"]) {
             NSDictionary* data = key;
-            [menuItems addObject:[[StoreMenuItem alloc] initWithName:[data objectForKey:@"name"] andWithUid:[data objectForKey:@"uid"]]];
+            [storesSection addMenu:[[StoreMenuItem alloc] initWithName:[data objectForKey:@"name"] andWithUid:[data objectForKey:@"uid"]]];
             [_menuItemsTableView reloadData];
         }
     } failure:^{
@@ -38,29 +44,36 @@
     [self openContentNavigationController: [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil]]];
 }
 
-- (void) clearAndAddHome {
-    [menuItems removeAllObjects];
-    [menuItems addObject:[[HomeMenuItem alloc] init]];
+//Section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [sectionMenuItems count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[sectionMenuItems objectAtIndex:section] title];
+}
+
+
+
+//Row
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [menuItems count];
+    return [[[sectionMenuItems objectAtIndex:section] items] count];
 }
 
 static NSString* const StoreCellId = @"StoreId";
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: StoreCellId];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: StoreCellId];
     }
-    cell.textLabel.text = [[menuItems objectAtIndex: indexPath.row] name];
+    cell.textLabel.text = [[[[sectionMenuItems objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row] name];
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UINavigationController *nvc;
-    nvc = [[UINavigationController alloc] initWithRootViewController:[[menuItems objectAtIndex: indexPath.row] controller]];
+    nvc = [[UINavigationController alloc] initWithRootViewController:[[[[sectionMenuItems objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row] controller]];
     [self openContentNavigationController:nvc];
 }
 

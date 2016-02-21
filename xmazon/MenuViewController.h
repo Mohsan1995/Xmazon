@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "AMSlideMenuLeftTableViewController.h"
-#import "MenuItem.h"
+#import "SectionMenuItem.h"
 
 @interface MenuViewController : AMSlideMenuLeftTableViewController {
     
     @private
-    NSMutableArray<MenuItem*>* menuItems;
+    NSMutableArray<SectionMenuItem*>* sectionMenuItems;
 }
 @property (strong, nonatomic) IBOutlet UITableView *menuItemsTableView;
 

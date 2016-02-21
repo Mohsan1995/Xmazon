@@ -12,6 +12,7 @@
 		66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A1B1C6FDE3000B30279 /* NetworkManager.m */; };
 		66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66174A211C6FE1B400B30279 /* MenuViewController.m */; };
 		66174A241C6FE1B400B30279 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66174A221C6FE1B400B30279 /* MenuViewController.xib */; };
+		66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FB1C7A018000456473 /* SectionMenuItem.m */; };
 		66B1E5B01C4F8709004C6955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5AF1C4F8709004C6955 /* main.m */; };
 		66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E5B21C4F8709004C6955 /* AppDelegate.m */; };
 		66B1E5BB1C4F8709004C6955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B1E5BA1C4F8709004C6955 /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 		66174A201C6FE1B400B30279 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		66174A211C6FE1B400B30279 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		66174A221C6FE1B400B30279 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		66AAC1FA1C7A018000456473 /* SectionMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionMenuItem.h; sourceTree = "<group>"; };
+		66AAC1FB1C7A018000456473 /* SectionMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionMenuItem.m; sourceTree = "<group>"; };
 		66B1E5AB1C4F8709004C6955 /* xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B1E5AF1C4F8709004C6955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66B1E5B11C4F8709004C6955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 		66E446EE1C725C860030ED7A /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				66AAC1FA1C7A018000456473 /* SectionMenuItem.h */,
+				66AAC1FB1C7A018000456473 /* SectionMenuItem.m */,
 				66E446EF1C725CA00030ED7A /* MenuItem.h */,
 				66E446F01C725CA00030ED7A /* MenuItem.m */,
 				66E446F21C725E520030ED7A /* HomeMenuItem.h */,
@@ -421,6 +426,7 @@
 				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
 				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
+				66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */,
 				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

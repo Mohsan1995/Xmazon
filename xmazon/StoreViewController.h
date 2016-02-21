@@ -13,10 +13,5 @@
     NSString* uid_;
 }
 @property(strong, nonatomic) NSString* uid;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
-@property (weak, nonatomic) IBOutlet UITableView *productsTableView;
-
-@property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 
 @end
