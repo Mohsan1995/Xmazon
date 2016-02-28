@@ -149,6 +149,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         //On définie le header Authorization
         NSString* authorization = [NSString stringWithFormat:@"%@%@", @"Bearer ", [token objectForKey:@"access_token"]];
+        NSLog(@"%@", authorization);
         [manager.requestSerializer setValue:authorization forHTTPHeaderField:@"Authorization"];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         
@@ -211,6 +212,12 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 //-----------------------------------------------------
 //Custom REQUEST
 //-----------------------------------------------------
+
+//Recupère les commandes
++ (void) getOrdersWithSuccess:(void (^)(id responseObject))success
+                      failure:(void (^)())failure {
+    [self requestClientTokenWithMethod:@"GET" WithUrl:@"/order/list" params:nil success:success failure:failure];
+}
 
 //Recupère informations utilisateur
 + (void) getUserWithSuccess:(void (^)(id responseObject))success

@@ -71,6 +71,9 @@
 
 
 
++ (void) getOrdersWithSuccess:(void (^)(id responseObject))success
+                      failure:(void (^)())failure;
+
 + (void) getUserWithSuccess:(void (^)(id responseObject))success
                     failure:(void (^)())failure;
 
