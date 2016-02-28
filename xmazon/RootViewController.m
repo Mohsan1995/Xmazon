@@ -29,11 +29,6 @@
 - (void)viewDidLoad {
     self.leftMenu = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     [super viewDidLoad];
-    [NetworkManager oauthUserWithUserName:@"crabeman93330@gmail.com" password:@"test" successs:^{
-        NSLog(@"OK");
-    } failure:^{
-        NSLog(@"Nop");
-    }];
 }
 
 - (BOOL)deepnessForLeftMenu {
