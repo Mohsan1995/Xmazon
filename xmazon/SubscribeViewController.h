@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
 
-- (void)  showAlertMessage:(NSString*) myMessage;
+- (void)  showAlertWithMessage:(NSString*) myMessage
+                       handler:(void (^)(UIAlertAction* action)) handler;
 
 @end

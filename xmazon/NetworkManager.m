@@ -125,7 +125,7 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
                  success:(void (^)(id responseObject))success
                  failure:(void (^)())failure {
     
-    NSLog(@"Request %@ url: %@ ", type, url);
+    NSLog(@"Request %@ url:%@   params:%@", type, url, params);
     
     //On recupère le token en fonction du type
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
@@ -173,11 +173,11 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
         
         //On éxécute les différentes fonction en fonction de la method définie
         if ([method isEqualToString:@"GET"]) {
-            [manager GET:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
+            [manager GET:fullUrl parameters:params success:requestSuccess failure:requestFailure];
         } else if ([method isEqualToString:@"POST"]) {
-            [manager POST:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
+            [manager POST:fullUrl parameters:params success:requestSuccess failure:requestFailure];
         } else if ([method isEqualToString:@"PUT"]) {
-            [manager PUT:fullUrl parameters:nil success:requestSuccess failure:requestFailure];
+            [manager PUT:fullUrl parameters:params success:requestSuccess failure:requestFailure];
         }
     }
 }

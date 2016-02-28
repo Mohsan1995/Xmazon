@@ -8,6 +8,7 @@
 
 #import "SubscribeViewController.h"
 #import "NetworkManager.h"
+#import "LoginViewController.h"
 
 @interface SubscribeViewController ()
 
@@ -26,12 +27,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)  showAlertMessage:(NSString*) myMessage{
+- (void)  showAlertWithMessage:(NSString*) myMessage
+                       handler:(void (^)(UIAlertAction* action)) handler {
     UIAlertController *alertController;
     alertController = [UIAlertController alertControllerWithTitle:@"Subscribe" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
-    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler: handler]];
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
@@ -54,20 +55,16 @@
     
     NSLog(@"%@", parameters);
     
-    NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
-    [defaults setObject:nil forKey:@"app_token"];
     [NetworkManager subscribeWithParams: parameters success:^(id responseObject) {
-        NSString* string = [responseObject objectForKey:@"code"];
-        NSLog(@"Response api  %@", string);
-        
-        /*if ([responseObject objectForKey:@"code"]) {
-         [self showAlertMessage:@"Une erreur est survenue lors de la création de votre compte"];
-         }else{
-         [self showAlertMessage:@"Votre compte a été bien été crée"];
-         
-         }*/
+        if ([[responseObject objectForKey:@"code"] isEqualToNumber: [NSNumber numberWithInt:500]]) {
+            [self showAlertWithMessage:@"Une erreur est survenue lors de la création de votre compte" handler:nil];
+        } else {
+            [self showAlertWithMessage:@"Votre compte a été bien été crée" handler:^(UIAlertAction *action) {
+                [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+            }];
+        }
     } failure:^{
-        NSLog(@"NOPPPPP");
+        [self showAlertWithMessage:@"Une erreur est survenue lors de la création de votre compte" handler:nil];
     }];
 }
 

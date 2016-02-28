@@ -22,11 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.title = @"Login";
-    [NetworkManager getUserWithSuccess:^(id responseObject) {
-        [self.navigationController pushViewController:[RootViewController new] animated:YES];
-    } failure:^{
-        
-    }];
 }
 
 - (IBAction)connection:(id)sender {
