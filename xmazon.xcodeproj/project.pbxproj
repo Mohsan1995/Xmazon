@@ -19,6 +19,10 @@
 		6620ECAF1C860F8100108DFE /* add-to-cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6620ECAE1C860F8100108DFE /* add-to-cart.png */; };
 		6620ECB31C86144900108DFE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECB11C86144900108DFE /* SearchViewController.m */; };
 		6620ECB41C86144900108DFE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6620ECB21C86144900108DFE /* SearchViewController.xib */; };
+		6620ECB81C86233500108DFE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECB61C86233500108DFE /* CartViewController.m */; };
+		6620ECB91C86233500108DFE /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6620ECB71C86233500108DFE /* CartViewController.xib */; };
+		6620ECBB1C86240900108DFE /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 6620ECBA1C86240900108DFE /* delete.png */; };
+		6620ECBE1C8628E700108DFE /* CartMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECBD1C8628E700108DFE /* CartMenuItem.m */; };
 		66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FB1C7A018000456473 /* SectionMenuItem.m */; };
 		66AAC2001C7A177A00456473 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FE1C7A177A00456473 /* UserViewController.m */; };
 		66AAC2011C7A177A00456473 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AAC1FF1C7A177A00456473 /* UserViewController.xib */; };
@@ -88,6 +92,12 @@
 		6620ECB01C86144900108DFE /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		6620ECB11C86144900108DFE /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		6620ECB21C86144900108DFE /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		6620ECB51C86233500108DFE /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		6620ECB61C86233500108DFE /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		6620ECB71C86233500108DFE /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
+		6620ECBA1C86240900108DFE /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		6620ECBC1C8628E700108DFE /* CartMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartMenuItem.h; sourceTree = "<group>"; };
+		6620ECBD1C8628E700108DFE /* CartMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartMenuItem.m; sourceTree = "<group>"; };
 		66AAC1FA1C7A018000456473 /* SectionMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionMenuItem.h; sourceTree = "<group>"; };
 		66AAC1FB1C7A018000456473 /* SectionMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionMenuItem.m; sourceTree = "<group>"; };
 		66AAC1FD1C7A177A00456473 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
@@ -199,6 +209,7 @@
 				66E446EE1C725C860030ED7A /* Object */,
 				66174A191C6FDE0800B30279 /* Utils */,
 				66B1E5B11C4F8709004C6955 /* AppDelegate.h */,
+				6620ECBA1C86240900108DFE /* delete.png */,
 				6620ECAE1C860F8100108DFE /* add-to-cart.png */,
 				66B1E5B21C4F8709004C6955 /* AppDelegate.m */,
 				66B1E5BA1C4F8709004C6955 /* Assets.xcassets */,
@@ -261,6 +272,9 @@
 				6620ECB01C86144900108DFE /* SearchViewController.h */,
 				6620ECB11C86144900108DFE /* SearchViewController.m */,
 				6620ECB21C86144900108DFE /* SearchViewController.xib */,
+				6620ECB51C86233500108DFE /* CartViewController.h */,
+				6620ECB61C86233500108DFE /* CartViewController.m */,
+				6620ECB71C86233500108DFE /* CartViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -280,6 +294,8 @@
 				6620ECA31C85BD3F00108DFE /* Product.m */,
 				6620ECAB1C85CF4A00108DFE /* LogoffMenuItem.h */,
 				6620ECAC1C85CF4A00108DFE /* LogoffMenuItem.m */,
+				6620ECBC1C8628E700108DFE /* CartMenuItem.h */,
+				6620ECBD1C8628E700108DFE /* CartMenuItem.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -398,7 +414,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6620ECBB1C86240900108DFE /* delete.png in Resources */,
 				6620ECA11C85B36C00108DFE /* CategoryViewController.xib in Resources */,
+				6620ECB91C86233500108DFE /* CartViewController.xib in Resources */,
 				66AAC2011C7A177A00456473 /* UserViewController.xib in Resources */,
 				66E446FC1C725FEC0030ED7A /* StoreViewController.xib in Resources */,
 				66B1E5BE1C4F8709004C6955 /* LaunchScreen.storyboard in Resources */,
@@ -487,9 +505,11 @@
 				66E446F11C725CA00030ED7A /* MenuItem.m in Sources */,
 				66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
+				6620ECB81C86233500108DFE /* CartViewController.m in Sources */,
 				66E446EC1C7259740030ED7A /* RootViewController.m in Sources */,
 				6620ECB31C86144900108DFE /* SearchViewController.m in Sources */,
 				6620ECAA1C85C84700108DFE /* ViewMenuItem.m in Sources */,
+				6620ECBE1C8628E700108DFE /* CartMenuItem.m in Sources */,
 				C207A5271C73CEF30028E864 /* SubscribeViewController.m in Sources */,
 				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
 				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,

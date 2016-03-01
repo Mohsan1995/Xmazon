@@ -12,6 +12,7 @@
 #import "SearchViewController.h"
 #import "StoreMenuItem.h"
 #import "LogoffMenuItem.h"
+#import "CartMenuItem.h"
 
 @interface MenuViewController ()
 
@@ -26,7 +27,7 @@
     
     SectionMenuItem* clientSection = [[SectionMenuItem alloc] initWitTitle:@"Client"];
     [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Mon Compte" andWithController:[UserViewController new]]];
-    [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Mon Panier" andWithController:nil]];
+    [clientSection addMenu:[[CartMenuItem alloc] initWithName:@"Mon Panier" andWithController:nil]];
     [clientSection addMenu:[[LogoffMenuItem alloc] initWithName:@"Déconnecter"]];
     [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Rechercher" andWithController:[SearchViewController new]]];
     [sectionMenuItems addObject:clientSection];

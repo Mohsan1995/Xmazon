@@ -170,7 +170,8 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
         
         //L'url complète
         NSString* fullUrl = [NSString stringWithFormat:@"%@%@", BASE_URL, url];
-        
+
+        manager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet setWithObjects:@"GET", @"HEAD", nil];
         //On éxécute les différentes fonction en fonction de la method définie
         if ([method isEqualToString:@"GET"]) {
             [manager GET:fullUrl parameters:params success:requestSuccess failure:requestFailure];
@@ -284,6 +285,6 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
                            quantity:(int) quantity
                              sucess:(void (^)(id responseObject))success
                             failure:(void (^)())failure {
-    [self requestClientTokenWithMethod:@"DELETE" WithUrl:@"/cart/remove" params:@{@"product_uid": uid, @"quantity": [NSString stringWithFormat:@"%d", quantity]} success:success failure:failure];    
+    [self requestClientTokenWithMethod:@"DELETE" WithUrl:@"/cart/remove" params:@{@"product_uid": uid, @"quantity": [NSString stringWithFormat:@"%d", quantity]} success:success failure:failure];
 }
 @end
