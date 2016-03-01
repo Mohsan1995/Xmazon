@@ -7,6 +7,7 @@
 //
 
 #import "LogoffMenuItem.h"
+#import "LoginViewController.h"
 
 @implementation LogoffMenuItem
 
@@ -15,7 +16,7 @@
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
     [defaults setObject:nil forKey:@"client_token"];
     
-    
+    [view.navigationController pushViewController:[LoginViewController new] animated:YES];
 }
 
 @end
