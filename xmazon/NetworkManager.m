@@ -149,7 +149,6 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         //On définie le header Authorization
         NSString* authorization = [NSString stringWithFormat:@"%@%@", @"Bearer ", [token objectForKey:@"access_token"]];
-        NSLog(@"%@", authorization);
         [manager.requestSerializer setValue:authorization forHTTPHeaderField:@"Authorization"];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         
@@ -179,6 +178,8 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
             [manager POST:fullUrl parameters:params success:requestSuccess failure:requestFailure];
         } else if ([method isEqualToString:@"PUT"]) {
             [manager PUT:fullUrl parameters:params success:requestSuccess failure:requestFailure];
+        } else if ([method isEqualToString:@"DELETE"]) {
+            [manager DELETE:fullUrl parameters:params success:requestSuccess failure:requestFailure];
         }
     }
 }
@@ -261,5 +262,28 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
                      success:(void (^)(id responseObject))success
                      failure:(void (^)())failure {
     [self requestAppTokenWithMethod:@"POST" WithUrl:@"/auth/subscribe" params:params success:success failure:failure];
+}
+
+
+
+
+
++ (void) getCartWithSucess:(void (^)(id responseObject))success
+                   failure:(void (^)())failure {
+            [self requestClientTokenWithMethod:@"GET" WithUrl:@"/cart" params:nil success:success failure:failure];
+}
+
++ (void) addProductToCartWithUid:(NSString*) uid
+                        quantity:(int) quantity
+                          sucess:(void (^)(id responseObject))success
+                         failure:(void (^)())failure {
+    [self requestClientTokenWithMethod:@"PUT" WithUrl:@"/cart/add" params:@{@"product_uid": uid, @"quantity": [NSString stringWithFormat:@"%d", quantity]} success:success failure:failure];
+}
+
++ (void) removeProductToCartWithUid:(NSString*) uid
+                           quantity:(int) quantity
+                             sucess:(void (^)(id responseObject))success
+                            failure:(void (^)())failure {
+    [self requestClientTokenWithMethod:@"DELETE" WithUrl:@"/cart/remove" params:@{@"product_uid": uid, @"quantity": [NSString stringWithFormat:@"%d", quantity]} success:success failure:failure];    
 }
 @end

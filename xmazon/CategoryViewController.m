@@ -26,8 +26,9 @@
         for (NSInteger i = 0, max = [result count]; i<max; i++) {
             NSString* name = [[result objectAtIndex:i] objectForKey:@"name"];
             NSNumber* price = [[result objectAtIndex:i] objectForKey:@"price"];
+            NSString* uid = [[result objectAtIndex:i] objectForKey:@"uid"];
             int available = [[[result objectAtIndex:i] objectForKey:@"available"] intValue];
-            [products addObject:[[Product alloc] initWithName:name andWithPrice:price andIsAvailable:available == 1 ? YES : NO]];
+            [products addObject:[[Product alloc] initWithName:name andWithPrice:price andWithUid:uid andIsAvailable:available == 1 ? YES : NO]];
         }
         [_productsTableView reloadData];
     } failure:^{
@@ -62,15 +63,19 @@ static NSString* const ProductsCellId = @"ProductsId";
 
 - (NSArray *)rightButtons {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0]
-                                                 icon:[UIImage imageNamed:@"add-to-cart.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor: [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0] icon:[UIImage imageNamed:@"add-to-cart.png"]];
     return rightUtilityButtons;
 }
 
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
-    NSLog(@"%d", index);
+    NSIndexPath* cellIndexPath = [self.productsTableView indexPathForCell:cell];
+    Product* product = [products objectAtIndex: cellIndexPath.row];
+    [NetworkManager addProductToCartWithUid:product.uid quantity:1 sucess:^(id responseObject) {
+        NSLog(@"Added");
+    } failure:^{
+        NSLog(@"Nopp");
+    }];
 }
 
 

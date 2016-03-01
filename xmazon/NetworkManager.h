@@ -95,4 +95,18 @@
 + (void) subscribeWithParams:(NSDictionary*) params
                      success:(void (^)(id responseObject))success
                      failure:(void (^)())failure;
+
+
++ (void) getCartWithSucess:(void (^)(id responseObject))success
+                   failure:(void (^)())failure;
+
++ (void) addProductToCartWithUid:(NSString*) uid
+                        quantity:(int) quantity
+                          sucess:(void (^)(id responseObject))success
+                         failure:(void (^)())failure;
+
++ (void) removeProductToCartWithUid:(NSString*) uid
+                           quantity:(int) quantity
+                             sucess:(void (^)(id responseObject))success
+                            failure:(void (^)())failure;
 @end

@@ -64,8 +64,9 @@ static NSString* const ProductsCellId = @"ProductsId";
         for (NSInteger i = 0, max = [result count]; i<max; i++) {
             NSString* name = [[result objectAtIndex:i] objectForKey:@"name"];
             NSNumber* price = [[result objectAtIndex:i] objectForKey:@"price"];
+            NSString* uid = [[result objectAtIndex:i] objectForKey:@"uid"];
             int available = [[[result objectAtIndex:i] objectForKey:@"available"] intValue];
-            [products addObject:[[Product alloc] initWithName:name andWithPrice:price andIsAvailable:available == 1 ? YES : NO]];
+            [products addObject:[[Product alloc] initWithName:name andWithPrice:price andWithUid:uid andIsAvailable:available == 1 ? YES : NO]];
         }
         [_productsTableView reloadData];
     } failure:^{
