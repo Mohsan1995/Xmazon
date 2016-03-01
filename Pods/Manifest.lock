@@ -23,15 +23,18 @@ PODS:
   - AFOAuth2Manager (2.1.0):
     - AFNetworking/NSURLConnection (~> 2.2)
   - AMSlideMenu (1.5.4)
+  - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AFOAuth2Manager (= 2.1.0)
   - AMSlideMenu (= 1.5.4)
+  - SWTableViewCell (~> 0.3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AFOAuth2Manager: 8a00224a44bd570a92900287ee5a506473e0cbc6
   AMSlideMenu: 8571937703d2b8e187b22c1416be4cafc3532a11
+  SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
 COCOAPODS: 0.39.0

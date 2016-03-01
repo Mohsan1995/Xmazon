@@ -7,6 +7,7 @@ target 'xmazon' do
 pod 'AFNetworking', '~> 2.0'
 pod 'AFOAuth2Manager', '2.1.0'
 pod 'AMSlideMenu', '1.5.4'
+pod 'SWTableViewCell', '~> 0.3.7'
 
 end
 
