@@ -248,6 +248,14 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 }
 
 
+//Worth API
++ (void) getProductsWithSearch:(NSString*) search
+                        sucess:(void (^)(id responseObject))success
+                       failure:(void (^)())failure {
+        [self requestClientTokenWithMethod:@"GET" WithUrl:[NSString stringWithFormat:@"%@%@", @"/product/list?search=", search] params:nil success:success failure:failure];
+}
+
+
 //Method use for subscription
 + (void) subscribeWithParams:(NSDictionary*) params
                      success:(void (^)(id responseObject))success

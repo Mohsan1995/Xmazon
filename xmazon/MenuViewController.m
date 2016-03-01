@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "NetworkManager.h"
 #import "UserViewController.h"
+#import "SearchViewController.h"
 #import "StoreMenuItem.h"
 #import "LogoffMenuItem.h"
 
@@ -27,6 +28,7 @@
     [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Mon Compte" andWithController:[UserViewController new]]];
     [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Mon Panier" andWithController:nil]];
     [clientSection addMenu:[[LogoffMenuItem alloc] initWithName:@"Déconnecter"]];
+    [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Rechercher" andWithController:[SearchViewController new]]];
     [sectionMenuItems addObject:clientSection];
     
     SectionMenuItem* storesSection = [[SectionMenuItem alloc] initWitTitle:@"Store"];

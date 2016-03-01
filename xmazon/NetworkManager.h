@@ -88,6 +88,10 @@
                              sucess:(void (^)(id responseObject))success
                             failure:(void (^)())failure;
 
++ (void) getProductsWithSearch:(NSString*) search
+                        sucess:(void (^)(id responseObject))success
+                       failure:(void (^)())failure;
+
 + (void) subscribeWithParams:(NSDictionary*) params
                      success:(void (^)(id responseObject))success
                      failure:(void (^)())failure;
