@@ -8,6 +8,7 @@
 
 #import "CategoryViewController.h"
 #import "NetworkManager.h"
+#import "SWTableViewCell.h"
 
 @interface CategoryViewController ()
 
@@ -45,9 +46,11 @@
 static NSString* const ProductsCellId = @"ProductsId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: ProductsCellId];
+    SWTableViewCell *cell = (SWTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ProductsCellId];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier: ProductsCellId];
+        cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ProductsCellId];
+        cell.rightUtilityButtons = [self rightButtons];
+        cell.delegate = self;
     }
     Product* product = [products objectAtIndex: indexPath.row];
     cell.textLabel.text = [product name];
@@ -55,5 +58,20 @@ static NSString* const ProductsCellId = @"ProductsId";
     cell.textColor = [product available] ? [UIColor blackColor] : [UIColor redColor];
     return cell;
 }
+
+
+- (NSArray *)rightButtons {
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0]
+                                                 icon:[UIImage imageNamed:@"add-to-cart.png"]];
+    return rightUtilityButtons;
+}
+
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    NSLog(@"%d", index);
+}
+
 
 @end

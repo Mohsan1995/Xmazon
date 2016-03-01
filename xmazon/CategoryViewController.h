@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Product.h"
+#import "SWTableViewCell.h"
 
-@interface CategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface CategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate> {
     @private
     NSString* uid_;
     
