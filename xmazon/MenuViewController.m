@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #import "UserViewController.h"
 #import "StoreMenuItem.h"
+#import "LogoffMenuItem.h"
 
 @interface MenuViewController ()
 
@@ -23,8 +24,9 @@
     sectionMenuItems = [[NSMutableArray alloc] init];
     
     SectionMenuItem* clientSection = [[SectionMenuItem alloc] initWitTitle:@"Client"];
-    [clientSection addMenu:[[MenuItem alloc] initWithName:@"Mon Compte" andWithController:[UserViewController new]]];
-    [clientSection addMenu:[[MenuItem alloc] initWithName:@"Mon Panier" andWithController:nil]];
+    [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Mon Compte" andWithController:[UserViewController new]]];
+    [clientSection addMenu:[[ViewMenuItem alloc] initWithName:@"Mon Panier" andWithController:nil]];
+    [clientSection addMenu:[[LogoffMenuItem alloc] initWithName:@"Déconnecter"]];
     [sectionMenuItems addObject:clientSection];
     
     SectionMenuItem* storesSection = [[SectionMenuItem alloc] initWitTitle:@"Store"];
@@ -70,9 +72,7 @@ static NSString* const StoreCellId = @"StoreId";
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UINavigationController *nvc;
-    nvc = [[UINavigationController alloc] initWithRootViewController:[[[[sectionMenuItems objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row] controller]];
-    [self openContentNavigationController:nvc];
+    [[[[sectionMenuItems objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row] onClick:self];
 }
 
 @end

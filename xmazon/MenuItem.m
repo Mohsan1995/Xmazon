@@ -11,15 +11,18 @@
 @implementation MenuItem
 
 @synthesize name = name_;
-@synthesize controller = controller_;
 
-- (id) initWithName:(NSString*) name andWithController:(UIViewController*) controller {
+- (id) initWithName:(NSString*) name {
     self = [super init];
     if (self) {
         self.name = name;
-        self.controller = controller;
     }
     return self;
+}
+
+
+- (void) onClick:(AMSlideMenuLeftTableViewController*) view {
+    //Override
 }
 
 @end
