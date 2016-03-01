@@ -14,6 +14,8 @@
 		6620ECA11C85B36C00108DFE /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6620EC9F1C85B36C00108DFE /* CategoryViewController.xib */; };
 		6620ECA41C85BD3F00108DFE /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECA31C85BD3F00108DFE /* Product.m */; };
 		6620ECA71C85C47E00108DFE /* AlertMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECA61C85C47E00108DFE /* AlertMessage.m */; };
+		6620ECAA1C85C84700108DFE /* ViewMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECA91C85C84700108DFE /* ViewMenuItem.m */; };
+		6620ECAD1C85CF4A00108DFE /* LogoffMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECAC1C85CF4A00108DFE /* LogoffMenuItem.m */; };
 		66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FB1C7A018000456473 /* SectionMenuItem.m */; };
 		66AAC2001C7A177A00456473 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FE1C7A177A00456473 /* UserViewController.m */; };
 		66AAC2011C7A177A00456473 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AAC1FF1C7A177A00456473 /* UserViewController.xib */; };
@@ -75,6 +77,10 @@
 		6620ECA31C85BD3F00108DFE /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		6620ECA51C85C47E00108DFE /* AlertMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMessage.h; sourceTree = "<group>"; };
 		6620ECA61C85C47E00108DFE /* AlertMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMessage.m; sourceTree = "<group>"; };
+		6620ECA81C85C84700108DFE /* ViewMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMenuItem.h; sourceTree = "<group>"; };
+		6620ECA91C85C84700108DFE /* ViewMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMenuItem.m; sourceTree = "<group>"; };
+		6620ECAB1C85CF4A00108DFE /* LogoffMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoffMenuItem.h; sourceTree = "<group>"; };
+		6620ECAC1C85CF4A00108DFE /* LogoffMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoffMenuItem.m; sourceTree = "<group>"; };
 		66AAC1FA1C7A018000456473 /* SectionMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionMenuItem.h; sourceTree = "<group>"; };
 		66AAC1FB1C7A018000456473 /* SectionMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionMenuItem.m; sourceTree = "<group>"; };
 		66AAC1FD1C7A177A00456473 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
@@ -255,10 +261,14 @@
 				66AAC1FB1C7A018000456473 /* SectionMenuItem.m */,
 				66E446EF1C725CA00030ED7A /* MenuItem.h */,
 				66E446F01C725CA00030ED7A /* MenuItem.m */,
+				6620ECA81C85C84700108DFE /* ViewMenuItem.h */,
+				6620ECA91C85C84700108DFE /* ViewMenuItem.m */,
 				66E446F51C725F2F0030ED7A /* StoreMenuItem.h */,
 				66E446F61C725F2F0030ED7A /* StoreMenuItem.m */,
 				6620ECA21C85BD3F00108DFE /* Product.h */,
 				6620ECA31C85BD3F00108DFE /* Product.m */,
+				6620ECAB1C85CF4A00108DFE /* LogoffMenuItem.h */,
+				6620ECAC1C85CF4A00108DFE /* LogoffMenuItem.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -465,6 +475,7 @@
 				66174A1C1C6FDE3000B30279 /* NetworkManager.m in Sources */,
 				66B1E5B31C4F8709004C6955 /* AppDelegate.m in Sources */,
 				66E446EC1C7259740030ED7A /* RootViewController.m in Sources */,
+				6620ECAA1C85C84700108DFE /* ViewMenuItem.m in Sources */,
 				C207A5271C73CEF30028E864 /* SubscribeViewController.m in Sources */,
 				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
 				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,
@@ -473,6 +484,7 @@
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
 				66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */,
 				6620ECA01C85B36C00108DFE /* CategoryViewController.m in Sources */,
+				6620ECAD1C85CF4A00108DFE /* LogoffMenuItem.m in Sources */,
 				C2C2B75F1C727B9D00F4DDED /* LoginViewController.m in Sources */,
 				66AAC2001C7A177A00456473 /* UserViewController.m in Sources */,
 				66174A231C6FE1B400B30279 /* MenuViewController.m in Sources */,

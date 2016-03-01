@@ -6,9 +6,9 @@
 //  Copyright © 2016 Quentin. All rights reserved.
 //
 
-#import "MenuItem.h"
+#import "ViewMenuItem.h"
 
-@interface StoreMenuItem : MenuItem {
+@interface StoreMenuItem : ViewMenuItem {
     
     @private
     NSString* uid_;

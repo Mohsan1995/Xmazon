@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMSlideMenuLeftTableViewController.h"
 
 @interface MenuItem : NSObject {
     
     @private
     NSString* name_;
-    UIViewController* controller_;
 }
 @property(strong, nonatomic) NSString* name;
-@property(strong, nonatomic) UIViewController* controller;
 
 
-- (id) initWithName:(NSString*) name andWithController:(UIViewController*) controller;
+- (id) initWithName:(NSString*) name;
+
+- (void) onClick:(AMSlideMenuLeftTableViewController*) view;
 @end
