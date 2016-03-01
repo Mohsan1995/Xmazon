@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoreViewController : UIViewController {
+@interface StoreViewController : UITabBarController {
     @private
     NSString* uid_;
 }
+
+-(id) initWithUid:(NSString*) uid;
+
 @property(strong, nonatomic) NSString* uid;
 
 @end

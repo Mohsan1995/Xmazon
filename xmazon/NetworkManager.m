@@ -241,6 +241,13 @@ NSString * const BASE_URL = @"http://xmazon.appspaces.fr";
 }
 
 
++ (void) getProductsWithCatogoryUid:(NSString*) uid
+                             sucess:(void (^)(id responseObject))success
+                            failure:(void (^)())failure {
+    [self requestClientTokenWithMethod:@"GET" WithUrl:[NSString stringWithFormat:@"%@%@", @"/product/list?category_uid=", uid] params:nil success:success failure:failure];
+}
+
+
 //Method use for subscription
 + (void) subscribeWithParams:(NSDictionary*) params
                      success:(void (^)(id responseObject))success
