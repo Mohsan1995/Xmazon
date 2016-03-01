@@ -16,8 +16,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *inputBirth;
 @property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
-
-- (void)  showAlertWithMessage:(NSString*) myMessage
-                       handler:(void (^)(UIAlertAction* action)) handler;
-
 @end

@@ -13,6 +13,7 @@
 		6620ECA01C85B36C00108DFE /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620EC9E1C85B36C00108DFE /* CategoryViewController.m */; };
 		6620ECA11C85B36C00108DFE /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6620EC9F1C85B36C00108DFE /* CategoryViewController.xib */; };
 		6620ECA41C85BD3F00108DFE /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECA31C85BD3F00108DFE /* Product.m */; };
+		6620ECA71C85C47E00108DFE /* AlertMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6620ECA61C85C47E00108DFE /* AlertMessage.m */; };
 		66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FB1C7A018000456473 /* SectionMenuItem.m */; };
 		66AAC2001C7A177A00456473 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC1FE1C7A177A00456473 /* UserViewController.m */; };
 		66AAC2011C7A177A00456473 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AAC1FF1C7A177A00456473 /* UserViewController.xib */; };
@@ -72,6 +73,8 @@
 		6620EC9F1C85B36C00108DFE /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 		6620ECA21C85BD3F00108DFE /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		6620ECA31C85BD3F00108DFE /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		6620ECA51C85C47E00108DFE /* AlertMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMessage.h; sourceTree = "<group>"; };
+		6620ECA61C85C47E00108DFE /* AlertMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMessage.m; sourceTree = "<group>"; };
 		66AAC1FA1C7A018000456473 /* SectionMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionMenuItem.h; sourceTree = "<group>"; };
 		66AAC1FB1C7A018000456473 /* SectionMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionMenuItem.m; sourceTree = "<group>"; };
 		66AAC1FD1C7A177A00456473 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 			children = (
 				66174A1A1C6FDE3000B30279 /* NetworkManager.h */,
 				66174A1B1C6FDE3000B30279 /* NetworkManager.m */,
+				6620ECA51C85C47E00108DFE /* AlertMessage.h */,
+				6620ECA61C85C47E00108DFE /* AlertMessage.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 				66E446F71C725F2F0030ED7A /* StoreMenuItem.m in Sources */,
 				66E446FB1C725FEC0030ED7A /* StoreViewController.m in Sources */,
 				6620ECA41C85BD3F00108DFE /* Product.m in Sources */,
+				6620ECA71C85C47E00108DFE /* AlertMessage.m in Sources */,
 				66B1E5B01C4F8709004C6955 /* main.m in Sources */,
 				66AAC1FC1C7A018000456473 /* SectionMenuItem.m in Sources */,
 				6620ECA01C85B36C00108DFE /* CategoryViewController.m in Sources */,
