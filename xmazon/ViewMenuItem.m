@@ -22,7 +22,12 @@
 }
 
 - (void) onClick:(AMSlideMenuLeftTableViewController*) view {
-    [view openContentNavigationController: [[UINavigationController alloc] initWithRootViewController:controller_]];
+    [view openContentNavigationController: [[UINavigationController alloc] initWithRootViewController:[self getController]]];
+}
+
+
+- (UIViewController*) getController {
+    return self.controller;
 }
 
 @end

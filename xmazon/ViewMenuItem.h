@@ -18,4 +18,6 @@
 
 
 - (id) initWithName:(NSString*) name andWithController:(UIViewController*) controller;
+
+- (UIViewController*) getController;
 @end

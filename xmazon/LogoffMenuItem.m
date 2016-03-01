@@ -15,7 +15,7 @@
 - (void) onClick:(AMSlideMenuLeftTableViewController*) view {
     NSUserDefaults* defaults = [[NSUserDefaults alloc] init];
     [defaults setObject:nil forKey:@"client_token"];
-    
+
     [view.navigationController pushViewController:[LoginViewController new] animated:YES];
 }
 

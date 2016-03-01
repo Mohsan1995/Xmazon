@@ -14,13 +14,19 @@
 @synthesize uid = uid_;
 
 - (id) initWithName:(NSString *)name andWithUid:(NSString*)uid {
-    StoreViewController* storeViewController = [[StoreViewController alloc] initWithUid: uid];
-    storeViewController.title = name;
-    self = [super initWithName:name andWithController:storeViewController];
+    self = [super initWithName:name];
     if (self) {
         self.uid = uid;
     }
     return self;
+}
+
+- (UIViewController*) getController {
+    if (self.controller == nil) {
+        self.controller = [[StoreViewController alloc] initWithUid: self.uid];
+        self.controller.title = self.name;
+    }
+    return [super getController];
 }
 
 @end
