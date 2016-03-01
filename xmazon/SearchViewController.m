@@ -59,7 +59,7 @@ static NSString* const ProductsCellId = @"ProductsId";
 
 - (void)searchBarSearchButtonClicked:(UISearchBar*)searchBar {
     NSLog(@"%@", searchBar.text);
-    [NetworkManager getProductsWithCatogoryUid:uid_ sucess:^(id responseObject) {
+    [NetworkManager getProductsWithSearch:searchBar.text sucess:^(id responseObject) {
         NSArray* result = [responseObject objectForKey:@"result"];
         for (NSInteger i = 0, max = [result count]; i<max; i++) {
             NSString* name = [[result objectAtIndex:i] objectForKey:@"name"];
