@@ -38,10 +38,7 @@
                                @"firstname": self.inputFirstName.text,
                                @"lastname": self.inputLastName.text,
                                @"birthdate": self.inputBirth.text
-                               
                                };
-    
-    
     NSLog(@"%@", parameters);
     
     [NetworkManager subscribeWithParams: parameters success:^(id responseObject) {
@@ -57,6 +54,12 @@
     }];
 }
 
+- (IBAction)login:(id)sender {
+    
+    [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+    
+    
+}
 
 
 

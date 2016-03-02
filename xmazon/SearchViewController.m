@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "NetworkManager.h"
+#import "AlertMessage.h"
 
 @interface SearchViewController ()
 
@@ -61,16 +62,20 @@ static NSString* const ProductsCellId = @"ProductsId";
     NSLog(@"%@", searchBar.text);
     [NetworkManager getProductsWithSearch:searchBar.text sucess:^(id responseObject) {
         NSArray* result = [responseObject objectForKey:@"result"];
-        for (NSInteger i = 0, max = [result count]; i<max; i++) {
-            NSString* name = [[result objectAtIndex:i] objectForKey:@"name"];
-            NSNumber* price = [[result objectAtIndex:i] objectForKey:@"price"];
-            NSString* uid = [[result objectAtIndex:i] objectForKey:@"uid"];
-            int available = [[[result objectAtIndex:i] objectForKey:@"available"] intValue];
-            [products addObject:[[Product alloc] initWithName:name andWithPrice:price andWithUid:uid andIsAvailable:available == 1 ? YES : NO]];
+        if ([result count] == 0) {
+        [AlertMessage showWithView:self message:@"Une erreur est survenue lors de la recherche" handler:nil];            
+        } else {
+            for (NSInteger i = 0, max = [result count]; i<max; i++) {
+                NSString* name = [[result objectAtIndex:i] objectForKey:@"name"];
+                NSNumber* price = [[result objectAtIndex:i] objectForKey:@"price"];
+                NSString* uid = [[result objectAtIndex:i] objectForKey:@"uid"];
+                int available = [[[result objectAtIndex:i] objectForKey:@"available"] intValue];
+                [products addObject:[[Product alloc] initWithName:name andWithPrice:price andWithUid:uid andIsAvailable:available == 1 ? YES : NO]];
+            }
+            [_productsTableView reloadData];
         }
-        [_productsTableView reloadData];
     } failure:^{
-        
+        [AlertMessage showWithView:self message:@"Une erreur est survenue lors de la recherche" handler:nil];
     }];
 }
 @end
